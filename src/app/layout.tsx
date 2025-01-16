@@ -31,10 +31,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.className}>
-      <body className={inter.className + " flex flex-col min-h-screen antialiased"}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      </head>
+      <body className={`${inter.className} flex flex-col min-h-screen antialiased overflow-x-hidden touch-manipulation`}>
         <SpeedInsights />
         <Header />
-        <main className="flex-grow pt-[var(--header-height)]">
+        <main className="flex-grow pt-[var(--header-height)] w-full max-w-[100vw]">
           {children}
         </main>
         <Footer />
