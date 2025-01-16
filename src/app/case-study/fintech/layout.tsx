@@ -1,8 +1,8 @@
 import { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Case Studies | Holistic',
-  description: 'Explore our collection of case studies showcasing successful digital transformations and innovative solutions.',
+  title: 'Fintech Case Study | Holistic',
+  description: 'Discover our innovative fintech transformation solutions.',
 };
 
 export const viewport: Viewport = {
@@ -11,7 +11,7 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
-export default function CaseStudyLayout({
+export default function FintechLayout({
   children,
 }: {
   children: React.ReactNode;

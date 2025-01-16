@@ -1,8 +1,8 @@
 import { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Case Studies | Holistic',
-  description: 'Explore our collection of case studies showcasing successful digital transformations and innovative solutions.',
+  title: 'E-commerce Case Study | Holistic',
+  description: 'Learn about our successful e-commerce digital transformation projects.',
 };
 
 export const viewport: Viewport = {
@@ -11,7 +11,7 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
-export default function CaseStudyLayout({
+export default function EcommerceLayout({
   children,
 }: {
   children: React.ReactNode;
