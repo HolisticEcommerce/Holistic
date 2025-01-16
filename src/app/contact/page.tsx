@@ -104,7 +104,7 @@ export default function Contact() {
       {/* Content Container */}
       <div className="relative z-10 container mx-auto px-4 py-16">
         {/* Hero Section with Unique Layout */}
-        <div className="relative mb-24">
+        <div className="relative mb-8">
           <div className="absolute -top-20 -right-20 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl animate-pulse [animation-delay:2s]"></div>
           
@@ -113,20 +113,18 @@ export default function Contact() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 rounded-lg opacity-50"></div>
               <div className="relative bg-[#040D19] px-6 py-2 rounded-lg border border-emerald-500/20">
-                <span className="text-emerald-400 font-medium tracking-wider">GET IN TOUCH</span>
+                <span className="text-emerald-300 font-semibold tracking-wider">GET IN TOUCH</span>
               </div>
             </div>
           </div>
 
           <h1 className="relative text-center">
-            <span className="inline-block text-7xl md:text-8xl font-bold text-transparent bg-clip-text 
-                         bg-gradient-to-br from-emerald-400 via-blue-400 to-purple-400
-                         [text-shadow:0_4px_30px_rgba(6,182,212,0.3)]">
-              Let&apos;s Create
+            <span className="inline-block text-6xl md:text-5xl font-bold text-transparent bg-clip-text 
+                         bg-gradient-to-br from-emerald-300 via-blue-300 to-purple-300
+                         [text-shadow:0_4px_30px_rgba(255,255,255,0.4)]">
+              Connect Us
             </span>
-            <span className="block text-4xl md:text-5xl mt-4 font-light bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              something amazing together
-            </span>
+          
           </h1>
         </div>
 
@@ -138,28 +136,28 @@ export default function Contact() {
               className="group relative"
             >
               {/* Animated Border */}
-              <div className="absolute -inset-[1px] bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 rounded-2xl opacity-70
+              <div className="absolute -inset-[1px] bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 rounded-2xl opacity-75
                            before:absolute before:inset-[1px] before:bg-[#040D19] before:rounded-2xl before:z-10
                            after:absolute after:inset-[1px] after:bg-gradient-to-r after:from-emerald-500 after:via-blue-500 after:to-purple-500 after:rounded-2xl after:opacity-0
-                           after:transition-opacity after:duration-500 group-hover:after:opacity-10"></div>
+                           after:transition-opacity after:duration-500 group-hover:after:opacity-20"></div>
 
               {/* Card Content */}
               <div className="relative z-20 p-8 rounded-2xl backdrop-blur-sm">
                 <div className="flex items-center space-x-6">
                   <div className="relative">
                     {/* Animated Icon Background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-blue-500/20 to-purple-500/20 rounded-xl blur-sm group-hover:blur-md transition-all duration-500"></div>
-                    <div className="relative p-4 bg-[#040D19]/80 rounded-xl border border-emerald-500/20">
-                      <div className="text-emerald-400 group-hover:text-blue-400 transition-colors duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 via-blue-500/30 to-purple-500/30 rounded-xl blur-sm group-hover:blur-md transition-all duration-500"></div>
+                    <div className="relative p-4 bg-[#040D19]/90 rounded-xl border border-emerald-500/30">
+                      <div className="text-emerald-300 group-hover:text-blue-300 transition-colors duration-500">
                         {info.icon}
                       </div>
                     </div>
                   </div>
                   <div>
-                    <h2 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400">
+                    <h2 className="text-2xl font-semibold text-white">
                       {info.title}
                     </h2>
-                    <p className="mt-2 text-emerald-300/70">{info.details}</p>
+                    <p className="mt-2 text-emerald-200">{info.details}</p>
                   </div>
                 </div>
               </div>
@@ -171,7 +169,7 @@ export default function Contact() {
         <div className="max-w-5xl mx-auto relative">
           {/* Form Container with Unique Border Animation */}
           <div className="relative p-[1px] rounded-2xl bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500">
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 rounded-2xl opacity-30"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 rounded-2xl opacity-40"></div>
             
             <div className="relative rounded-2xl bg-[#040D19] overflow-hidden">
               <div className="grid md:grid-cols-2">
@@ -184,13 +182,10 @@ export default function Contact() {
                   </div>
 
                   <div className="relative">
-                    <h2 className="text-4xl font-bold mb-6">
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-200 via-blue-200 to-purple-200
-                                   drop-shadow-[0_2px_2px_rgba(6,182,212,0.3)]">
-                        Start a Conversation
-                      </span>
+                    <h2 className="text-4xl font-bold mb-6 text-white">
+                      Start a Conversation
                     </h2>
-                    <p className="text-lg text-emerald-100/90 leading-relaxed mb-12">
+                    <p className="text-lg text-emerald-100 leading-relaxed mb-12">
                       Have an idea that could change the world? Or just want to say hello? 
                       We&apos;re here to turn your vision into reality.
                     </p>
@@ -198,7 +193,7 @@ export default function Contact() {
                     {/* Social Links with Unique Design */}
                     <div className="space-y-8">
                       <div>
-                        <h3 className="text-xl font-semibold mb-4 text-emerald-200">Connect With Us</h3>
+                        <h3 className="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
                         <div className="flex space-x-6">
                           {['Twitter', 'LinkedIn', 'GitHub'].map((platform) => (
                             <a
@@ -206,10 +201,10 @@ export default function Contact() {
                               href="#"
                               className="group/link relative px-4 py-2"
                             >
-                              <span className="relative z-10 text-emerald-200 group-hover/link:text-sky-200 transition-colors">
+                              <span className="relative z-10 text-emerald-100 group-hover/link:text-white transition-colors">
                                 {platform}
                               </span>
-                              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-sky-500/10 rounded-lg 
+                              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-sky-500/20 rounded-lg 
                                           scale-x-0 group-hover/link:scale-x-100 origin-left transition-transform duration-300"></div>
                             </a>
                           ))}
@@ -218,12 +213,12 @@ export default function Contact() {
                       
                       {/* Working Hours with Unique Design */}
                       <div className="relative">
-                        <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/5 to-sky-500/5 rounded-xl"></div>
+                        <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/10 to-sky-500/10 rounded-xl"></div>
                         <div className="relative">
-                          <h3 className="text-xl font-semibold mb-2 text-emerald-200">Working Hours</h3>
-                          <p className="text-emerald-100/90">
+                          <h3 className="text-xl font-semibold mb-2 text-white">Working Hours</h3>
+                          <p className="text-emerald-100">
                             Monday - Friday
-                            <span className="block text-sm text-emerald-200/80 mt-1">9:00 AM - 6:00 PM</span>
+                            <span className="block text-sm text-emerald-200 mt-1">9:00 AM - 6:00 PM</span>
                           </p>
                         </div>
                       </div>
@@ -232,7 +227,7 @@ export default function Contact() {
                 </div>
 
                 {/* Right Panel - Form with Unique Input Design */}
-                <div className="p-8 bg-[#040D19]/80 backdrop-blur-xl">
+                <div className="p-8 bg-[#040D19]/90 backdrop-blur-xl">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Input Fields with Unique Animation */}
                     {[
@@ -241,7 +236,7 @@ export default function Contact() {
                       { name: 'subject', label: 'Subject', type: 'text', placeholder: 'What\'s this about?' }
                     ].map((field) => (
                       <div key={field.name} className="relative">
-                        <label className="block text-sm font-medium text-emerald-200 mb-2">
+                        <label className="block text-sm font-medium text-white mb-2">
                           {field.label}
                         </label>
                         <div className="relative group">
@@ -252,9 +247,9 @@ export default function Contact() {
                             name={field.name}
                             value={formData[field.name as keyof typeof formData]}
                             onChange={handleChange}
-                            className="relative w-full px-4 py-3 bg-[#040D19] border border-emerald-500/30 rounded-lg 
-                                   text-emerald-100 placeholder-emerald-500/50
-                                   focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/50
+                            className="relative w-full px-4 py-3 bg-[#040D19] border border-emerald-500/40 rounded-lg 
+                                   text-white placeholder-emerald-300/70
+                                   focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/60
                                    transition duration-300"
                             placeholder={field.placeholder}
                             required
@@ -265,7 +260,7 @@ export default function Contact() {
 
                     {/* Message Field */}
                     <div className="relative">
-                      <label className="block text-sm font-medium text-emerald-200 mb-2">
+                      <label className="block text-sm font-medium text-white mb-2">
                         Message
                       </label>
                       <div className="relative group">
@@ -276,9 +271,9 @@ export default function Contact() {
                           value={formData.message}
                           onChange={handleChange}
                           rows={4}
-                          className="relative w-full px-4 py-3 bg-[#040D19] border border-emerald-500/30 rounded-lg 
-                                 text-emerald-100 placeholder-emerald-500/50
-                                 focus:border-sky-500/50 focus:ring-1 focus:ring-sky-500/50
+                          className="relative w-full px-4 py-3 bg-[#040D19] border border-emerald-500/40 rounded-lg 
+                                 text-white placeholder-emerald-300/70
+                                 focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/60
                                  transition duration-300"
                           placeholder="Tell us about your project..."
                           required
@@ -289,19 +284,11 @@ export default function Contact() {
                     {/* Submit Button with Unique Animation */}
                     <button
                       type="submit"
-                      className="relative w-full group overflow-hidden rounded-lg px-8 py-4"
+                      className="w-full px-8 py-4 bg-gradient-to-r from-emerald-500 to-blue-500 text-white font-medium rounded-lg
+                             hover:from-emerald-600 hover:to-blue-600 transition-all duration-300
+                             focus:ring-2 focus:ring-blue-500/50 focus:outline-none"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 transition-transform duration-500
-                                  group-hover:scale-[1.1] group-active:scale-[1.05]"></div>
-                      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%)] bg-[length:250%_250%]
-                                  animate-shimmer"></div>
-                      <span className="relative flex items-center justify-center text-lg font-medium text-emerald-50">
-                        Send Message
-                        <svg className="w-5 h-5 ml-2 -mr-1 transform group-hover:translate-x-1 transition-transform" 
-                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </span>
+                      Send Message
                     </button>
                   </form>
                 </div>

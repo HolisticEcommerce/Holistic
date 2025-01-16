@@ -100,15 +100,14 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="relative group perspective">
-            <div className="relative transform transition-all duration-300 group-hover:rotate-x-12 group-hover:scale-110">
-              <div className="text-2xl font-bold bg-gradient-to-r from-purple-500 via-cyan-500 to-emerald-500 bg-clip-text text-transparent animate-gradient-x">
-                HOLISTIC
+            <div className="relative transform transition-all duration-500 group-hover:scale-110">
+              <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-500 via-cyan-500 to-emerald-500 bg-clip-text text-transparent animate-gradient-x relative">
+                HOLISTIC ECOMMERCE
+                <span className="absolute -inset-x-4 -inset-y-2 bg-gradient-to-r from-purple-500/20 via-cyan-500/20 to-emerald-500/20 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-lg -z-10" />
+                <span className="absolute -inset-x-4 -inset-y-2 bg-gradient-to-r from-purple-500/10 via-cyan-500/10 to-emerald-500/10 blur-xl scale-x-0 group-hover:scale-x-100 transition-transform duration-700 delay-100 origin-left -z-20" />
               </div>
-              {/* Logo Shadow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-full h-8 bg-gradient-to-r from-purple-500/20 via-cyan-500/20 to-emerald-500/20 blur-xl -z-10 group-hover:opacity-100 opacity-0 transition-opacity" />
             </div>
           </Link>
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-2">
             {/* Regular Nav Items Before Services */}
