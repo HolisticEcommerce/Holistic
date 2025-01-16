@@ -440,7 +440,7 @@ export default function Home() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-emerald-300 to-cyan-300 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </Link>
           </div>
         </div>
@@ -612,7 +612,7 @@ export default function Home() {
               {
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l-5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
                   </svg>
                 ),
                 title: 'Creative Design',
@@ -1037,7 +1037,37 @@ export default function Home() {
                                   ? 'text-teal-400'
                                   : 'text-indigo-400'
                               }`}>
-                                {typeof value === 'string' ? value : String(value)}
+                                {value === 'Add Charge' ? (
+                                 <React.Fragment>
+                                    <svg
+                                      className="w-4 h-4 mr-1"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke="currentColor"
+                                      strokeWidth="2"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    >
+                                     
+                                    </svg>
+                                    {value}
+                                    </React.Fragment>
+                                ) : (
+                                  <React.Fragment>
+                                    <svg
+                                      className="w-4 h-4 mr-1"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke="currentColor"
+                                      strokeWidth="2"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    >
+                                     
+                                    </svg>
+                                    {value}
+                                    </React.Fragment>
+                                )}
                               </span>
                             )}
                           </div>
@@ -1138,7 +1168,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-br from-teal-400 via-cyan-400 to-indigo-400 rounded-xl rotate-6 group-hover:rotate-0 transition-transform duration-300"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2zm4-4v.01" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18.5V21m0-9v2.5m0-9V9m8.4 3c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8z" />
                       </svg>
                     </div>
                   </div>
