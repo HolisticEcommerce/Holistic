@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingButtons from '@/components/FloatingButtons'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body className={inter.className + " flex flex-col min-h-screen antialiased"}>
+        <SpeedInsights />
         <Header />
         <main className="flex-grow pt-[var(--header-height)]">
           {children}
