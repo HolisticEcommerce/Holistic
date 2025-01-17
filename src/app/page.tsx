@@ -153,18 +153,18 @@ export default function Home() {
         <div className="absolute inset-0 z-10">
           <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-cyan-500/10 to-emerald-500/10 animate-gradient-x" />
-          <div className="absolute w-[500px] h-[500px] -right-64 top-0 bg-purple-500/30 rounded-full blur-3xl animate-blob" />
-          <div className="absolute w-[500px] h-[500px] -left-64 bottom-0 bg-cyan-500/30 rounded-full blur-3xl animate-blob animation-delay-2000" />
-          <div className="absolute w-[800px] h-[800px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-500/10 via-cyan-500/10 to-emerald-500/10 rounded-full blur-3xl animate-pulse-slow" />
+          <div className="absolute w-[300px] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] -right-32 sm:-right-48 lg:-right-64 top-0 bg-purple-500/30 rounded-full blur-3xl animate-blob" />
+          <div className="absolute w-[300px] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] -left-32 sm:-left-48 lg:-left-64 bottom-0 bg-cyan-500/30 rounded-full blur-3xl animate-blob animation-delay-2000" />
+          <div className="absolute w-[500px] sm:w-[600px] lg:w-[800px] h-[500px] sm:h-[600px] lg:h-[800px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-500/10 via-cyan-500/10 to-emerald-500/10 rounded-full blur-3xl animate-pulse-slow" />
         </div>
 
-        <div className="container relative mx-auto px-0 pt-20 pb-24 sm:pt-24 sm:pb-32 z-20">
+        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 lg:pb-32 z-20">
           {/* Hero Content */}
-          <div className="flex flex-col items-center justify-center text-center space-y-12">
+          <div className="flex flex-col items-center justify-center text-center space-y-8 sm:space-y-10 lg:space-y-12">
             {/* Main Heading with 3D Effect */}
             <div className="relative">
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400 animate-gradient-x pb-3">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400 animate-gradient-x pb-2 sm:pb-3">
                   Transforming Ideas
                 </span>
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 animate-gradient-x animate-delay-300">
@@ -172,63 +172,88 @@ export default function Home() {
                 </span>
               </h1>
               {/* 3D Floating Elements */}
-              <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-full h-full pointer-events-none">
-                <div className="absolute top-0 left-0 w-20 h-20 bg-purple-500/10 rounded-full blur-xl animate-float" />
-                <div className="absolute top-10 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-xl animate-float animation-delay-1000" />
-                <div className="absolute bottom-0 left-1/4 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl animate-float animation-delay-2000" />
+              <div className="absolute -top-16 sm:-top-20 left-1/2 transform -translate-x-1/2 w-full h-full pointer-events-none">
+                <div className="absolute top-0 left-0 w-16 sm:w-20 h-16 sm:h-20 bg-purple-500/10 rounded-full blur-xl animate-float" />
+                <div className="absolute top-8 sm:top-10 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-cyan-500/10 rounded-full blur-xl animate-float animation-delay-1000" />
+                <div className="absolute bottom-0 left-1/4 w-20 sm:w-24 h-20 sm:h-24 bg-emerald-500/10 rounded-full blur-xl animate-float animation-delay-2000" />
               </div>
             </div>
 
             {/* Description with Typing Effect */}
-            <p className="relative mx-auto max-w-2xl text-lg sm:text-xl text-gray-300 leading-8 typewriter">
+            <p className="relative mx-auto max-w-xl sm:max-w-2xl text-base sm:text-lg lg:text-xl text-gray-300 leading-7 sm:leading-8 typewriter px-4">
               We specialize in creating innovative digital solutions that help businesses thrive in the modern world. Our team of experts combines creativity with technical excellence.
             </p>
 
-            {/* CTA Buttons with 3D Hover Effect */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-              <Link 
-                href="/contact"
-                className="group relative px-6 py-3 text-sm sm:text-base font-semibold text-white transform-gpu transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg transform-gpu transition-transform ease-out group-hover:scale-105" />
-                <div className="absolute inset-0 rounded-lg bg-black/50 backdrop-blur-sm transform-gpu transition-transform ease-out group-hover:scale-105" />
-                <span className="relative flex items-center justify-center">
-                  Free Consultation
-                  <svg className="ml-2 -mr-1 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H3" />
-                  </svg>
-                </span>
-              </Link>
-              <Link 
-                href="/about"
-                className="group relative px-6 py-3 text-sm sm:text-base font-semibold text-white transform-gpu transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-lg transform-gpu transition-transform ease-out group-hover:scale-105" />
-                <div className="absolute inset-0 rounded-lg bg-black/50 backdrop-blur-sm transform-gpu transition-transform ease-out group-hover:scale-105" />
-                <span className="relative flex items-center justify-center">
-                  Learn More
-                  <svg className="ml-2 -mr-1 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
-              </Link>
+            {/* Unique Modern Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 justify-center w-full max-w-xs sm:max-w-none mx-auto">
+              <div className="group relative w-full sm:w-auto">
+                <div className="absolute -inset-[3px] bg-gradient-to-r from-purple-600/75 via-cyan-500/75 to-emerald-500/75 rounded-xl blur-lg opacity-70 group-hover:opacity-100 animate-pulse transition-all duration-500"></div>
+                <div className="relative flex items-center w-full">
+                  <Link 
+                    href="/contact"
+                    className="relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-black border border-white/10 rounded-xl flex items-center justify-center gap-2 transform-gpu transition-all duration-500 group-hover:border-white/25 overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-cyan-500/10 to-emerald-500/10 group-hover:opacity-50 transition-opacity duration-500"></div>
+                    <span className="relative font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400">
+                      Free Consultation
+                    </span>
+                    <div className="relative w-6 h-6 flex items-center justify-center overflow-hidden">
+                      <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-full">→</div>
+                      <div className="absolute inset-0 flex items-center justify-center -translate-x-full transition-transform duration-300 group-hover:translate-x-0">→</div>
+                    </div>
+                    <div className="absolute top-0 right-0 w-12 h-full bg-gradient-to-l from-white/5 via-white/10 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="group relative w-full sm:w-auto">
+                <div className="absolute -inset-[3px] bg-gradient-to-r from-emerald-500/75 via-cyan-500/75 to-purple-600/75 rounded-xl blur-lg opacity-70 group-hover:opacity-100 animate-pulse transition-all duration-500"></div>
+                <div className="relative flex items-center w-full">
+                  <Link 
+                    href="/about"
+                    className="relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-black border border-white/10 rounded-xl flex items-center justify-center gap-2 transform-gpu transition-all duration-500 group-hover:border-white/25 overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-purple-600/10 group-hover:opacity-50 transition-opacity duration-500"></div>
+                    <span className="relative font-semibold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400">
+                      Learn More
+                    </span>
+                    <div className="relative w-6 h-6 flex items-center justify-center overflow-hidden">
+                      <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-full">→</div>
+                      <div className="absolute inset-0 flex items-center justify-center -translate-x-full transition-transform duration-300 group-hover:translate-x-0">→</div>
+                    </div>
+                    <div className="absolute top-0 right-0 w-12 h-full bg-gradient-to-l from-white/5 via-white/10 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            {/* 3D Stats Display */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+            {/* Modern Floating Stats Grid */}
+            <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full max-w-6xl mx-auto px-4 sm:px-6">
               {stats.map((stat, index) => (
-                <div key={index} className="group relative perspective overflow-visible">
-                  <div className="relative transform transition-all duration-500 group-hover:rotate-y-180 preserve-3d">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-cyan-500/10 to-emerald-500/10 rounded-lg backdrop-blur-sm border border-white/10" />
-                    <div className="relative px-4 py-6 text-center transform-gpu transition-transform">
-                      <div className="text-3xl sm:text-4xl font-bold text-white mb-2 min-h-[48px] flex items-center justify-center">
+                <div key={index} className="group relative">
+                  <div className="absolute -inset-[2px] bg-gradient-to-r from-purple-600/50 via-cyan-500/50 to-emerald-500/50 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700 animate-pulse"></div>
+                  <div className="relative bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 h-full transform-gpu transition-all duration-500 group-hover:border-white/20 group-hover:translate-y-[-2px] group-hover:shadow-[0_0_2rem_-0.5rem_rgba(255,255,255,0.1)]">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-cyan-500/10 to-emerald-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 overflow-hidden rounded-2xl">
+                      <div className="absolute w-2 h-2 bg-white/10 rounded-full top-[20%] left-[10%] animate-float-slow"></div>
+                      <div className="absolute w-2 h-2 bg-white/10 rounded-full top-[60%] right-[20%] animate-float-slower"></div>
+                      <div className="absolute w-1.5 h-1.5 bg-white/10 rounded-full bottom-[30%] left-[30%] animate-float"></div>
+                    </div>
+                    <div className="relative flex flex-col items-center">
+                      <div className="text-3xl xs:text-4xl sm:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400 mb-2 sm:mb-3 min-h-[3rem] sm:min-h-[3.5rem] flex items-center">
                         <NumberCounter
                           end={stat.value}
                           suffix={stat.suffix}
-                          duration={2000}
+                          duration={2500}
                         />
                       </div>
-                      <div className="text-sm text-gray-400">{stat.label}</div>
+                      <div className="relative">
+                        <div className="absolute -inset-x-4 -top-2 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                        <span className="text-xs sm:text-sm text-gray-400 font-medium tracking-wide uppercase">
+                          {stat.label}
+                        </span>
+                        <div className="absolute -inset-x-4 -bottom-2 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -351,8 +376,8 @@ export default function Home() {
                 description: 'Transforming ideas into digital masterpieces',
                 icon: (
                   <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 ),
                 gradient: 'from-emerald-400 to-teal-400'
@@ -362,7 +387,7 @@ export default function Home() {
                 description: 'Crafting robust and scalable solutions',
                 icon: (
                   <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
                   </svg>
                 ),
                 gradient: 'from-teal-400 to-cyan-400'
@@ -372,7 +397,7 @@ export default function Home() {
                 description: 'Pushing boundaries with cutting-edge tech',
                 icon: (
                   <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                   </svg>
                 ),
                 gradient: 'from-cyan-400 to-blue-400'
@@ -481,7 +506,7 @@ export default function Home() {
                 gradient: 'from-blue-500 via-emerald-500 to-purple-500',
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                   </svg>
                 )
               },
@@ -671,7 +696,7 @@ export default function Home() {
                 image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
                 icon: (
                   <svg className="w-8 h-8 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2h2v4l.586-.586z" />
                   </svg>
                 ),
                 title: 'Pay Per Click',
@@ -1033,8 +1058,7 @@ export default function Home() {
                             {typeof value === 'boolean' ? (
                               <svg 
                                 className={`w-5 h-5 ${value ? 'text-emerald-400' : 'text-gray-500'}`}
-                                fill="none"
-                                viewBox="0 0 24 24"
+                                fill="currentColor" viewBox="0 0 24 24"
                                 stroke="currentColor"
                                 strokeWidth="2"
                                 strokeLinecap="round"
@@ -1042,7 +1066,7 @@ export default function Home() {
                               >
                                 {value ? (
                                  <React.Fragment>
-                                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10h2v4l.586-.586z" />
                                     <path d="M7.5 12.5l3 3 6-6" className="text-emerald-400" strokeWidth="2.5" />
                                   </React.Fragment>
                                 ) : (
@@ -1324,7 +1348,7 @@ export default function Home() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-xl opacity-70 blur group-hover:opacity-100 transition duration-300"></div>
                       <button className="relative px-6 py-2 bg-black rounded-xl flex items-center space-x-2 transform hover:scale-105 transition duration-300">
                         <div className="relative">
-                          <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full animate-spin-slow opacity-50 blur-sm"></div>
+                          <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full animate-spin-slow opacity-50 blur-sm"></div>
                           <span className="relative text-xl">💫</span>
                         </div>
                         <div className="flex flex-col">
@@ -1410,8 +1434,8 @@ export default function Home() {
                         <option value="digital-marketing">Digital Marketing</option>
                       </select>
                       <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                        <svg className="w-5 h-5 text-cyan-500" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7m7 7V3" />
+                        <svg className="w-5 h-5 text-cyan-500" fill="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7m0 0l-7-7m7 7V3" />
                         </svg>
                       </div>
                     </div>

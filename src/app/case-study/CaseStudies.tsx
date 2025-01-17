@@ -32,7 +32,6 @@ export default function CaseStudies() {
               Explore our successful projects and transformative solutions
             </p>
           </motion.div>
-
           {/* Add your case studies grid/list here */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Case study cards go here */}
