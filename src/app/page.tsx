@@ -3,13 +3,10 @@
 import React from 'react';
 import Link from 'next/link';
 import NumberCounter from '@/components/NumberCounter';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { FaReact, FaNodeJs, FaWordpress, FaHtml5, FaBootstrap, FaPhp } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiTypescript, SiAngular, SiVuedotjs, SiMagento, SiDrupal, SiJoomla } from 'react-icons/si';
 import { TbBrandJavascript } from 'react-icons/tb';   
-
-const Globe3D = dynamic(() => import('@/components/Globe3D'), { ssr: false });
 
 const stats = [
   { label: 'Active Users', value: 100, suffix: '+' },
@@ -18,114 +15,7 @@ const stats = [
   { label: 'Success Rate', value: 99, suffix: '%' }
 ];
 
-const technologies = [
-  {
-    name: 'React',
-    icon: <FaReact className="w-12 h-12" />,
-    description: 'Modern UI development with component-based architecture',
-    color: 'text-cyan-400 group-hover:text-cyan-300',
-    glowColor: 'from-cyan-600 to-blue-600'
-  },
-  {
-    name: 'Next.js',
-    icon: <SiNextdotjs className="w-12 h-12" />,
-    description: 'Full-stack React framework for production',
-    color: 'text-white group-hover:text-gray-100',
-    glowColor: 'from-gray-600 to-gray-500'
-  },
-  {
-    name: 'Angular',
-    icon: <SiAngular className="w-12 h-12" />,
-    description: 'Enterprise-level web application development',
-    color: 'text-red-500 group-hover:text-red-400',
-    glowColor: 'from-red-600 to-pink-600'
-  },
-  {
-    name: 'Vue.js',
-    icon: <SiVuedotjs className="w-12 h-12" />,
-    description: 'Progressive JavaScript framework',
-    color: 'text-emerald-500 group-hover:text-emerald-400',
-    glowColor: 'from-emerald-600 to-green-600'
-  },
-  {
-    name: 'Node.js',
-    icon: <FaNodeJs className="w-12 h-12" />,
-    description: 'Server-side JavaScript runtime',
-    color: 'text-green-500 group-hover:text-green-400',
-    glowColor: 'from-green-600 to-emerald-600'
-  },
-  {
-    name: 'WordPress',
-    icon: <FaWordpress className="w-12 h-12" />,
-    description: 'Content management system development',
-    color: 'text-blue-500 group-hover:text-blue-400',
-    glowColor: 'from-blue-600 to-indigo-600'
-  },
-  {
-    name: 'Drupal',
-    icon: <SiDrupal className="w-12 h-12" />,
-    description: 'Enterprise CMS solutions',
-    color: 'text-blue-400 group-hover:text-blue-300',
-    glowColor: 'from-blue-600 to-sky-600'
-  },
-  {
-    name: 'Magento',
-    icon: <SiMagento className="w-12 h-12" />,
-    description: 'E-commerce platform development',
-    color: 'text-orange-500 group-hover:text-orange-400',
-    glowColor: 'from-orange-600 to-red-600'
-  },
-  {
-    name: 'Joomla',
-    icon: <SiJoomla className="w-12 h-12" />,
-    description: 'CMS and web application framework',
-    color: 'text-blue-500 group-hover:text-blue-400',
-    glowColor: 'from-blue-600 to-indigo-600'
-  },
-  {
-    name: 'Bootstrap',
-    icon: <FaBootstrap className="w-12 h-12" />,
-    description: 'Responsive front-end framework',
-    color: 'text-purple-500 group-hover:text-purple-400',
-    glowColor: 'from-purple-600 to-indigo-600'
-  },
-  {
-    name: 'Tailwind CSS',
-    icon: <SiTailwindcss className="w-12 h-12" />,
-    description: 'Utility-first CSS framework',
-    color: 'text-cyan-500 group-hover:text-cyan-400',
-    glowColor: 'from-cyan-600 to-blue-600'
-  },
-  {
-    name: 'HTML5',
-    icon: <FaHtml5 className="w-12 h-12" />,
-    description: 'Modern web markup language',
-    color: 'text-orange-500 group-hover:text-orange-400',
-    glowColor: 'from-orange-600 to-red-600'
-  },
-  {
-    name: 'JavaScript',
-    icon: <TbBrandJavascript className="w-12 h-12" />,
-    description: 'Dynamic web programming',
-    color: 'text-yellow-500 group-hover:text-yellow-400',
-    glowColor: 'from-yellow-600 to-orange-600'
-  },
-  {
-    name: 'TypeScript',
-    icon: <SiTypescript className="w-12 h-12" />,
-    description: 'Type-safe JavaScript development',
-    color: 'text-blue-500 group-hover:text-blue-400',
-    glowColor: 'from-blue-600 to-indigo-600'
-  },
-  {
-    name: 'PHP',
-    icon: <FaPhp className="w-12 h-12" />,
-    description: 'Server-side scripting language',
-    color: 'text-indigo-500 group-hover:text-indigo-400',
-    glowColor: 'from-indigo-600 to-purple-600'
-  },
- 
-];
+
 
 export default function Home() {
   return (
@@ -261,16 +151,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
+        
         </div>
       </section>
 
-              {/* About Section */}
+      {/* About Section */}
       <section className="relative py-24 overflow-hidden bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
         {/* Enhanced Animated Background */}
         <div className="absolute inset-0">
@@ -408,7 +293,7 @@ export default function Home() {
                 className="group relative p-8 rounded-2xl bg-white/90 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:bg-white/100"
               >
                 <div className="relative w-20 h-20 mx-auto mb-8">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl rotate-6 group-hover:rotate-0 transition-transform duration-500`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl rotate-6 group-hover:rotate-0 transition-transform duration-300`}></div>
                   <div className="absolute inset-0 flex items-center justify-center text-white">
                     {feature.icon}
                   </div>
@@ -608,166 +493,173 @@ export default function Home() {
    <section className="relative py-20 overflow-hidden">
         {/* Background with modern gradient and patterns */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-green-50/90 via-blue-50/90 to-purple-50/90 backdrop-blur-3xl" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808020_1px,transparent_1px),linear-gradient(to_bottom,#80808020_1px,transparent_1px)] bg-[size:14px_24px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-100/95 via-blue-100/95 to-purple-100/95 backdrop-blur-3xl" />
           
           {/* Animated gradient blobs */}
-          <div className="absolute top-0 -left-48 w-96 h-96 bg-gradient-to-r from-green-200/30 to-emerald-200/30 rounded-full mix-blend-multiply blur-2xl animate-blob" />
-          <div className="absolute top-0 -right-48 w-96 h-96 bg-gradient-to-r from-purple-200/30 to-indigo-200/30 rounded-full mix-blend-multiply blur-2xl animate-blob animation-delay-2000" />
-          <div className="absolute -bottom-48 left-1/2 w-96 h-96 bg-gradient-to-r from-blue-200/30 to-cyan-200/30 rounded-full mix-blend-multiply blur-2xl animate-blob animation-delay-4000" />
+          <div className="absolute top-0 -left-48 w-96 h-96 bg-gradient-to-r from-green-300/40 to-emerald-300/40 rounded-full mix-blend-multiply blur-2xl animate-blob" />
+          <div className="absolute top-0 -right-48 w-96 h-96 bg-gradient-to-r from-purple-300/40 to-indigo-300/40 rounded-full mix-blend-multiply blur-2xl animate-blob animation-delay-2000" />
+          <div className="absolute -bottom-48 left-1/2 w-96 h-96 bg-gradient-to-r from-blue-300/40 to-cyan-300/40 rounded-full mix-blend-multiply blur-2xl animate-blob animation-delay-4000" />
         </div>
 
         <div className="container mx-auto px-4 relative">
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-block">
-              <div className="flex items-center justify-center space-x-2 bg-white/20 backdrop-blur-xl rounded-full px-4 py-1 border border-white/20 shadow-lg shadow-black/5">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+              <div className="flex items-center justify-center space-x-2 bg-white/40 backdrop-blur-xl rounded-full px-6 py-2 border border-white/30 shadow-lg shadow-black/5">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-600"></span>
                 </span>
-                <span className="text-sm font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 text-transparent bg-clip-text">
+                <span className="text-sm font-semibold bg-gradient-to-r from-indigo-700 to-violet-700 text-transparent bg-clip-text">
                   Our Services
                 </span>
               </div>
             </div>
-            <h2 className="mt-6 text-4xl md:text-5xl font-bold">
+            <h2 className="mt-6 text-4xl md:text-5xl font-bold text-gray-900">
               Transforming Ideas into
-              <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 bg-clip-text text-transparent"> Digital Reality</span>
+              <span className="bg-gradient-to-r from-indigo-700 via-violet-700 to-purple-700 bg-clip-text text-transparent"> Digital Reality</span>
             </h2>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
               We offer comprehensive digital solutions to help your business grow and succeed in the modern digital landscape.
             </p>
           </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+          {/* Enhanced Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10 xl:gap-12 max-w-8xl mx-auto perspective-1000">
             {[
               {
                 number: '01',
                 image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
                 icon: (
-                  <svg className="w-8 h-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8 text-indigo-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h2v4l.586-.586z" />
                   </svg>
                 ),
                 title: 'Website Design',
                 description: 'We design attractive and SEO-friendly websites that cover all your business needs. Our web designer makes an attractive website',
-                href: '/services/web-design'
+                href: '/services/web-design',
+                gradient: 'from-indigo-600 to-violet-600'
               },
               {
                 number: '02',
                 image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
                 icon: (
-                  <svg className="w-8 h-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8 text-emerald-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4-4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 ),
                 title: 'Website Development',
                 description: 'Our Development team of experts builds attractive websites that actually perform & proceed with your expectations.',
-                href: '/services/web-development'
+                href: '/services/web-development',
+                gradient: 'from-emerald-600 to-teal-600'
               },
               {
                 number: '03',
-                image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+                image: 'https://images.unsplash.com/photo-1551650975-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
                 icon: (
-                  <svg className="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V6A2 2 0 0020 4H8a2 2 0 00-2 2v12a2 2 0 002 2h2v4l.586-.586z" />
                   </svg>
                 ),
                 title: 'App Development',
                 description: 'We build potential, economical Android & iOS mobile applications with an aim to collaborate your ideas and convert them into real products.',
-                href: '/services/app-development'
+                href: '/services/app-development',
+                gradient: 'from-blue-600 to-cyan-600'
               },
               {
                 number: '04',
                 image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
                 icon: (
-                  <svg className="w-8 h-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 ),
                 title: 'Search Engine Optimization',
                 description: 'Search Engines are the most dominant way to get your website indicated by potential customers. SEO helps to provide your website with top Rank.',
-                href: '/services/seo'
+                href: '/services/seo',
+                gradient: 'from-teal-600 to-green-600'
               },
               {
                 number: '05',
                 image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
                 icon: (
-                  <svg className="w-8 h-8 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8 text-cyan-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2h2v4l.586-.586z" />
                   </svg>
                 ),
                 title: 'Pay Per Click',
                 description: 'PPC or pay-per-click campaign helps your business to make highly profitable revenue. PPC is one of the most uses advertising campaigns.',
-                href: '/services/ppc'
+                href: '/services/ppc',
+                gradient: 'from-cyan-600 to-blue-600'
               },
               {
                 number: '06',
                 image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
                 icon: (
-                  <svg className="w-8 h-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-8 h-8 text-red-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 ),
                 title: 'Video Marketing & YouTube',
                 description: 'We create and help for your business to effective Video Marketing & YouTube SEO organic video views, engagement metrics.',
-                href: '/services/video-marketing'
+                href: '/services/video-marketing',
+                gradient: 'from-red-600 to-rose-600'
               }
             ].map((service, index) => (
               <Link
                 key={index}
                 href={service.href}
-                className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/10 to-white/5 p-1.5 transition-all duration-500 hover:from-white/20 hover:to-white/10 hover:scale-[1.01]"
+                className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/30 to-white/20 p-1.5 transition-all duration-500 hover:from-white/40 hover:to-white/30 hover:scale-[1.02] hover:shadow-2xl hover:shadow-${service.gradient.split(' ')[0]}/20 transform perspective-1000 hover:rotate-y-12"
               >
-                <div className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-lg shadow-black/5 ring-1 ring-black/5 transition-all duration-500">
-                  {/* Image Container with modern hover effects */}
-                  <div className="relative h-64 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/25 to-black/50 opacity-0 transition-opacity duration-500 group-hover:opacity-100 z-10" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/0 via-black/5 to-black/0 opacity-0 group-hover:opacity-100 animate-shimmer z-20" />
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      width={800}
-                      height={400}
-                      className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
-                    />
-                    {/* Service Number with modern design */}
-                    <div className="absolute top-4 left-4 z-20">
-                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-sm font-semibold text-gray-900 shadow-lg ring-1 ring-black/5 backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-white">
-                        {service.number}
-                      </span>
-                    </div>
-                    {/* Icon with glassmorphism */}
-                    <div className="absolute bottom-0 right-0 z-20 p-4">
-                      <div className="rounded-2xl bg-white/90 p-3 shadow-lg ring-1 ring-black/5 backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-white">
-                        {service.icon}
-                      </div>
+                {/* Enhanced Image Container with modern hover effects */}
+                <div className="relative h-72 overflow-hidden rounded-t-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/20 to-black/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100 z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/0 via-black/5 to-black/0 opacity-0 group-hover:opacity-100 animate-shimmer z-20" />
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={800}
+                    height={400}
+                    className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2 will-change-transform"
+                    loading="eager"
+                    priority={index < 3}
+                  />
+                  {/* Enhanced Service Number */}
+                  <div className="absolute top-4 left-4 z-20">
+                    <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-lg font-semibold text-gray-900 shadow-xl ring-1 ring-black/10 backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-white group-hover:shadow-2xl">
+                      {service.number}
+                    </span>
+                  </div>
+                  {/* Enhanced Icon with glassmorphism */}
+                  <div className="absolute bottom-4 right-4 z-20">
+                    <div className="rounded-2xl bg-white/95 p-4 shadow-xl ring-1 ring-black/10 backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-white group-hover:shadow-2xl">
+                      {service.icon}
                     </div>
                   </div>
-                  
-                  {/* Content with modern typography and effects */}
-                  <div className="flex flex-1 flex-col justify-between p-6 bg-gradient-to-b from-white via-white to-white/90">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2 transition-colors duration-500 group-hover:text-indigo-600 group-hover:translate-x-1">
-                        {service.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 line-clamp-3 transition-all duration-500 group-hover:text-gray-900">
-                        {service.description}
-                      </p>
-                    </div>
-                    <div className="mt-6">
-                      <div className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 p-[2px] transition-all duration-300 ease-in-out hover:from-indigo-600 hover:to-purple-600 hover:shadow-lg hover:shadow-indigo-500/25">
-                        <div className="relative inline-flex h-full w-full items-center justify-center rounded-full bg-white px-6 py-2.5 text-sm font-medium text-indigo-600 transition-all duration-300 group-hover/btn:bg-transparent group-hover/btn:text-white">
-                          <span className="mr-2">Learn more</span>
-                          <svg className="w-5 h-5 ml-2 text-white transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
-                          
-                          {/* Shine effect */}
-                          <div className="absolute inset-0 h-full w-full scale-0 rounded-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-500 group-hover/btn:scale-150" />
-                        </div>
+                </div>
+                
+                {/* Enhanced Content with modern typography and effects */}
+                <div className="flex flex-1 flex-col justify-between p-8 bg-gradient-to-b from-white/95 via-white to-white/95 rounded-b-2xl backdrop-blur-sm">
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 transition-colors duration-500 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:${service.gradient}">
+                      {service.title}
+                    </h3>
+                    <p className="text-base text-gray-700 leading-relaxed transition-all duration-500 group-hover:text-gray-900">
+                      {service.description}
+                    </p>
+                  </div>
+                  <div className="mt-8">
+                    <div className={`group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r ${service.gradient} p-[2px] transition-all duration-300 ease-out hover:shadow-2xl hover:shadow-${service.gradient.split(' ')[0]}/25`}>
+                      <div className="relative inline-flex h-full w-full items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-medium transition-all duration-300 group-hover/btn:bg-transparent group-hover/btn:text-white">
+                        <span className="mr-2 bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent group-hover/btn:text-white">Learn more</span>
+                        <svg className={`w-5 h-5 ml-2 text-${service.gradient.split(' ')[0]} transform group-hover/btn:translate-x-1 transition-transform duration-300 group-hover/btn:text-white`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                        
+                        {/* Enhanced Shine effect */}
+                        <div className="absolute inset-0 h-full w-full scale-0 rounded-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover/btn:scale-150" />
                       </div>
                     </div>
                   </div>
@@ -777,24 +669,24 @@ export default function Home() {
           </div>
         </div>
       </section>
-       {/* Web Design Packages Section */}
-       <section className="relative py-20 md:py-32 overflow-hidden">
+        {/* Web Design Packages Section */}
+   <section className="relative py-20 md:py-32 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628] via-[#0F2242] to-[#1A2B5C]">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02]" />
-          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-blue-500/20 via-cyan-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-0 -left-64 w-[800px] h-[800px] bg-gradient-to-br from-blue-500/20 via-cyan-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse-slow delay-150" />
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-blue-500/10 via-cyan-500/10 to-teal-500/10 rounded-full blur-3xl animate-pulse-slow" />
+          <div className="absolute bottom-0 -left-64 w-[800px] h-[800px] bg-gradient-to-br from-blue-500/10 via-cyan-500/10 to-teal-500/10 rounded-full blur-3xl animate-pulse-slow delay-150" />
         </div>
 
         <div className="relative container mx-auto px-4">
           {/* Section Header */}
           <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center space-x-2 bg-emerald-500/10 rounded-full py-2 px-6 mb-6 shadow-lg shadow-emerald-500/25 backdrop-blur-sm border border-emerald-500/20">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-              </span>
-              <span className="text-emerald-400 text-sm font-semibold tracking-wide uppercase">Pricing Plan</span>
+            <div className="inline-block mb-4">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-teal-500/10 to-cyan-500/10 backdrop-blur-sm border border-teal-500/20">
+                <span className="text-sm font-semibold bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text">
+                  Pricing Plans
+                </span>
+              </div>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text mb-6">
               <span className="relative">
@@ -816,7 +708,7 @@ export default function Home() {
             {['Choose Business Type', 'Start Up', 'Small Size', 'Mid Size', 'Large Size'].map((type, index) => (
               <button
                 key={index}
-                className="px-4 md:px-6 py-2 rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-slate-100 hover:text-white text-sm md:text-base font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-teal-500/25"
+                className="px-4 md:px-6 py-2 rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-slate-100 hover:text-white text-sm md:text-base font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-teal-500/25 group"
               >
                 {type}
               </button>
@@ -837,7 +729,7 @@ export default function Home() {
                     'Website Hosting': true,
                     'Business Email': true,
                     'Secured Certificate': true,
-                   
+                    
                   },
                   design: {
                     'Home Page Design': '5-10 Pages',
@@ -1019,14 +911,16 @@ export default function Home() {
                     }`}>
                       {pkg.name}
                     </h3>
-                    <div className={`text-4xl md:text-5xl font-bold ${
-                      pkg.popular 
-                        ? 'text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400'
-                        : index === 0
-                        ? 'text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400'
-                        : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400'
-                    }`}>
-                      {pkg.price}
+                    <div className="flex items-center justify-center mb-2">
+                      <div className={`text-4xl md:text-5xl font-bold ${
+                        pkg.popular 
+                          ? 'text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400'
+                          : index === 0
+                          ? 'text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400'
+                          : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400'
+                      }`}>
+                        {pkg.price}
+                      </div>
                     </div>
                     <div className={`text-sm ${
                       pkg.popular 
@@ -1058,7 +952,8 @@ export default function Home() {
                             {typeof value === 'boolean' ? (
                               <svg 
                                 className={`w-5 h-5 ${value ? 'text-emerald-400' : 'text-gray-500'}`}
-                                fill="currentColor" viewBox="0 0 24 24"
+                                fill="none"
+                                viewBox="0 0 24 24"
                                 stroke="currentColor"
                                 strokeWidth="2"
                                 strokeLinecap="round"
@@ -1066,7 +961,7 @@ export default function Home() {
                               >
                                 {value ? (
                                  <React.Fragment>
-                                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10h2v4l.586-.586z" />
+                                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
                                     <path d="M7.5 12.5l3 3 6-6" className="text-emerald-400" strokeWidth="2.5" />
                                   </React.Fragment>
                                 ) : (
@@ -1086,7 +981,37 @@ export default function Home() {
                                   ? 'text-teal-400'
                                   : 'text-indigo-400'
                               }`}>
-                                {typeof value === 'string' ? value : String(value)}
+                                {value === 'Add Charge' ? (
+                                 <React.Fragment>
+                                    <svg
+                                      className="w-4 h-4 mr-1"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke="currentColor"
+                                      strokeWidth="2"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    >
+                                     
+                                    </svg>
+                                    {value}
+                                    </React.Fragment>
+                                ) : (
+                                  <React.Fragment>
+                                    <svg
+                                      className="w-4 h-4 mr-1"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke="currentColor"
+                                      strokeWidth="2"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    >
+                                     
+                                    </svg>
+                                    {typeof value === 'string' ? value : String(value)}
+                                    </React.Fragment>
+                                )}
                               </span>
                             )}
                           </div>
@@ -1125,11 +1050,8 @@ export default function Home() {
                             Enquire Now
                           </span>
                           <svg className="w-5 h-5 ml-2 text-white transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                           </svg>
-                          
-                          {/* Shine effect */}
-                          <div className="absolute inset-0 h-full w-full scale-0 rounded-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-500 group-hover/btn:scale-150" />
                         </div>
                       </div>
                     </Link>
@@ -1144,33 +1066,30 @@ export default function Home() {
         </div>
       </section>
   {/* Features Section */}
-  <section className="relative py-24 overflow-hidden bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
+  <section className="relative py-24 overflow-hidden bg-gradient-to-br from-green-100 via-blue-100 to-purple-100">
         {/* Animated Background */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02]" />
-          <div className="absolute top-0 w-full h-64 bg-gradient-to-b from-green-100/50 to-transparent" />
-          <div className="absolute bottom-0 w-full h-64 bg-gradient-to-t from-purple-100/50 to-transparent" />
+          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.04]" />
+          <div className="absolute top-0 w-full h-64 bg-gradient-to-b from-green-200/60 to-transparent" />
+          <div className="absolute bottom-0 w-full h-64 bg-gradient-to-t from-purple-200/60 to-transparent" />
           {/* Animated circles */}
-          <div className="absolute top-1/4 -right-20 w-60 h-60 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob" />
-          <div className="absolute top-1/3 -left-20 w-60 h-60 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000" />
-          <div className="absolute bottom-1/4 left-1/2 w-60 h-60 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000" />
+          <div className="absolute top-1/4 -right-20 w-60 h-60 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob" />
+          <div className="absolute top-1/3 -left-20 w-60 h-60 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000" />
+          <div className="absolute bottom-1/4 left-1/2 w-60 h-60 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000" />
         </div>
 
         <div className="container mx-auto px-4 relative">
           {/* Section Header */}
           <div className="text-center mb-20">
           <div className="inline-block">
-              <div className="flex items-center justify-center space-x-2 bg-white/20 backdrop-blur-xl rounded-full px-4 py-1 border border-white/20 shadow-lg shadow-black/5">
-                <span className="relative flex h-2 w-2">
+              <div className="flex items-center justify-center space-x-2 bg-white/30 backdrop-blur-xl rounded-full px-4 py-1 border border-white/30 shadow-lg shadow-black/10">
+                <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-indigo-500"></span>
                 </span>
-                <span className="text-sm font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 text-transparent bg-clip-text">
-                  Why Choose Us 
-                </span>
+                <span className="text-sm font-semibold text-indigo-900 drop-shadow-sm">Why Choose Us</span>
               </div>
             </div>
-            
             <div className="mt-8 relative">
               <div className="absolute left-1/2 -translate-x-1/2 top-0 w-40 h-40 bg-gradient-to-r from-green-200 via-blue-200 to-purple-200 rounded-full blur-3xl opacity-30"></div>
               <h2 className="relative text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -1188,9 +1107,9 @@ export default function Home() {
               {
                 icon: (
                   <div className="relative w-14 h-14">
-                    <div className="absolute inset-0 bg-gradient-to-br from-teal-400 via-cyan-400 to-indigo-400 rounded-xl rotate-6 group-hover:rotate-0 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-500 via-cyan-500 to-indigo-500 rounded-xl rotate-6 group-hover:rotate-0 transition-transform duration-300"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-7 h-7 text-white drop-shadow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2h2v4l.586-.586z" />
                       </svg>
                     </div>
@@ -1202,9 +1121,9 @@ export default function Home() {
               {
                 icon: (
                   <div className="relative w-14 h-14">
-                    <div className="absolute inset-0 bg-gradient-to-br from-teal-400 via-cyan-400 to-indigo-400 rounded-xl -rotate-6 group-hover:rotate-0 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-500 via-cyan-500 to-indigo-500 rounded-xl -rotate-6 group-hover:rotate-0 transition-transform duration-300"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-7 h-7 text-white drop-shadow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
@@ -1216,9 +1135,9 @@ export default function Home() {
               {
                 icon: (
                   <div className="relative w-14 h-14">
-                    <div className="absolute inset-0 bg-gradient-to-br from-teal-400 via-cyan-400 to-indigo-400 rounded-xl rotate-12 group-hover:rotate-0 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-500 via-cyan-500 to-indigo-500 rounded-xl rotate-12 group-hover:rotate-0 transition-transform duration-300"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-7 h-7 text-white drop-shadow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h2v4l.586-.586z" />
                       </svg>
                     </div>
@@ -1230,9 +1149,9 @@ export default function Home() {
               {
                 icon: (
                   <div className="relative w-14 h-14">
-                    <div className="absolute inset-0 bg-gradient-to-br from-teal-400 via-cyan-400 to-indigo-400 rounded-xl -rotate-12 group-hover:rotate-0 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-500 via-cyan-500 to-indigo-500 rounded-xl -rotate-12 group-hover:rotate-0 transition-transform duration-300"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-7 h-7 text-white drop-shadow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                       </svg>
                     </div>
@@ -1244,9 +1163,9 @@ export default function Home() {
               {
                 icon: (
                   <div className="relative w-14 h-14">
-                    <div className="absolute inset-0 bg-gradient-to-br from-teal-400 via-cyan-400 to-indigo-400 rounded-xl rotate-3 group-hover:rotate-0 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-500 via-cyan-500 to-indigo-500 rounded-xl rotate-3 group-hover:rotate-0 transition-transform duration-300"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-7 h-7 text-white drop-shadow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
                       </svg>
                     </div>
@@ -1258,9 +1177,9 @@ export default function Home() {
               {
                 icon: (
                   <div className="relative w-14 h-14">
-                    <div className="absolute inset-0 bg-gradient-to-br from-teal-400 via-cyan-400 to-indigo-400 rounded-xl -rotate-3 group-hover:rotate-0 transition-transform duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-500 via-cyan-500 to-indigo-500 rounded-xl -rotate-3 group-hover:rotate-0 transition-transform duration-300"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-7 h-7 text-white drop-shadow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2z" />
                       </svg>
                     </div>
@@ -1272,9 +1191,9 @@ export default function Home() {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="group relative p-8 rounded-2xl transition-all duration-300 hover:scale-[1.02]"
+                className="group relative p-8 rounded-2xl transition-all duration-500 hover:transform hover:scale-[1.02]"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-indigo-50 rounded-2xl opacity-60 group-hover:opacity-90 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-indigo-50 rounded-2xl opacity-60 group-hover:opacity-90 transition-all duration-500"></div>
                 <div className="absolute inset-[1px] bg-white rounded-2xl"></div>
                 
                 <div className="relative z-10">
@@ -1308,23 +1227,132 @@ export default function Home() {
               </span>
               <span className="text-blue-700 text-sm font-semibold tracking-wide uppercase">Our Tech Stack</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-              Technologies We Use
-            </h2>
+            <h2 className="text-4xl font-bold text-center text-white mb-8">Technologies We Use</h2>
            
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {technologies.map((tech) => (
+            {[
+              {
+                name: 'React',
+                icon: <FaReact className="w-12 h-12" />,
+                description: 'Modern UI development with component-based architecture',
+                color: 'text-cyan-300 group-hover:text-cyan-300',
+                glowColor: 'from-cyan-600 to-blue-600'
+              },
+              {
+                name: 'Next.js',
+                icon: <SiNextdotjs className="w-12 h-12" />,
+                description: 'Full-stack React framework for production',
+                color: 'text-white group-hover:text-gray-100',
+                glowColor: 'from-gray-600 to-gray-500'
+              },
+              {
+                name: 'Angular',
+                icon: <SiAngular className="w-12 h-12" />,
+                description: 'Enterprise-level web application development',
+                color: 'text-red-400 group-hover:text-red-400',
+                glowColor: 'from-red-600 to-pink-600'
+              },
+              {
+                name: 'Vue.js',
+                icon: <SiVuedotjs className="w-12 h-12" />,
+                description: 'Progressive JavaScript framework',
+                color: 'text-emerald-400 group-hover:text-emerald-400',
+                glowColor: 'from-emerald-600 to-green-600'
+              },
+              {
+                name: 'Node.js',
+                icon: <FaNodeJs className="w-12 h-12" />,
+                description: 'Server-side JavaScript runtime',
+                color: 'text-green-400 group-hover:text-green-400',
+                glowColor: 'from-green-600 to-emerald-600'
+              },
+              {
+                name: 'WordPress',
+                icon: <FaWordpress className="w-12 h-12" />,
+                description: 'Content management system development',
+                color: 'text-blue-400 group-hover:text-blue-400',
+                glowColor: 'from-blue-600 to-indigo-600'
+              },
+              {
+                name: 'Drupal',
+                icon: <SiDrupal className="w-12 h-12" />,
+                description: 'Enterprise CMS solutions',
+                color: 'text-blue-300 group-hover:text-blue-300',
+                glowColor: 'from-blue-600 to-sky-600'
+              },
+              {
+                name: 'Magento',
+                icon: <SiMagento className="w-12 h-12" />,
+                description: 'E-commerce platform development',
+                color: 'text-orange-400 group-hover:text-orange-400',
+                glowColor: 'from-orange-600 to-red-600'
+              },
+              {
+                name: 'Joomla',
+                icon: <SiJoomla className="w-12 h-12" />,
+                description: 'CMS and web application framework',
+                color: 'text-blue-400 group-hover:text-blue-400',
+                glowColor: 'from-blue-600 to-indigo-600'
+              },
+              {
+                name: 'Bootstrap',
+                icon: <FaBootstrap className="w-12 h-12" />,
+                description: 'Responsive front-end framework',
+                color: 'text-purple-400 group-hover:text-purple-400',
+                glowColor: 'from-purple-600 to-indigo-600'
+              },
+              {
+                name: 'Tailwind CSS',
+                icon: <SiTailwindcss className="w-12 h-12" />,
+                description: 'Utility-first CSS framework',
+                color: 'text-cyan-400 group-hover:text-cyan-400',
+                glowColor: 'from-cyan-600 to-blue-600'
+              },
+              {
+                name: 'HTML5',
+                icon: <FaHtml5 className="w-12 h-12" />,
+                description: 'Modern web markup language',
+                color: 'text-orange-400 group-hover:text-orange-400',
+                glowColor: 'from-orange-600 to-red-600'
+              },
+              {
+                name: 'JavaScript',
+                icon: <TbBrandJavascript className="w-12 h-12" />,
+                description: 'Dynamic web programming',
+                color: 'text-yellow-400 group-hover:text-yellow-400',
+                glowColor: 'from-yellow-600 to-orange-600'
+              },
+              {
+                name: 'TypeScript',
+                icon: <SiTypescript className="w-12 h-12" />,
+                description: 'Type-safe JavaScript development',
+                color: 'text-blue-400 group-hover:text-blue-400',
+                glowColor: 'from-blue-600 to-indigo-600'
+              },
+              {
+                name: 'PHP',
+                icon: <FaPhp className="w-12 h-12" />,
+                description: 'Server-side scripting language',
+                color: 'text-indigo-400 group-hover:text-indigo-400',
+                glowColor: 'from-indigo-600 to-purple-600'
+              },
+ 
+            ].map((tech) => (
               <div
                 key={tech.name}
-                className="group p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300"
+                className="group relative p-8 rounded-2xl bg-slate-800/50 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:bg-slate-800/100"
               >
-                <div className={`mb-4 ${tech.color}`}>
-                  {tech.icon}
+                <div className={`absolute inset-0 bg-gradient-to-r ${tech.glowColor} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl`} />
+                <div className="relative bg-slate-900 p-1 rounded-2xl h-full">
+                  <div className="bg-slate-800/50 backdrop-blur-xl rounded-xl h-full p-6">
+                    <div className={`w-16 h-16 mb-8 rounded-xl bg-gradient-to-r ${tech.color} flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                      {tech.icon}
+                    </div>
+                    <h3 className="text-xl font-bold mb-4 text-white group-hover:text-emerald-400 transition-colors duration-300">{tech.name}</h3>
+                    <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{tech.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-white group-hover:text-emerald-400 transition-colors duration-300">{tech.name}</h3>
-                <p className="text-slate-400">{tech.description}</p>
-                <div className={`absolute inset-0 bg-gradient-to-r ${tech.glowColor} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-xl`} />
               </div>
             ))}
           </div>
@@ -1471,113 +1499,35 @@ export default function Home() {
         </div>
       </section>
     
-      {/* Global Presence Section */}
-      <section className="relative py-24 overflow-hidden bg-gradient-to-b from-gray-900 to-[#0F172A]">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/0 via-cyan-900/10 to-gray-900/0" />
-          <div className="absolute top-1/3 right-0 w-[800px] h-[800px] bg-gradient-to-br from-purple-500/20 via-indigo-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute -bottom-1/3 -left-64 w-[800px] h-[800px] bg-gradient-to-br from-blue-500/20 via-cyan-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse-slow delay-150" />
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-300 via-teal-300 to-emerald-300 bg-clip-text text-transparent mb-6">
-              <span className="relative">
-                <span className="absolute -top-8 left-1/2 -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-green-500/30 to-blue-500/30 rounded-full blur-2xl"></span>
-                <span className="relative text-slate-50">Our Global Client&apos;s Presence</span>
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-green-300 via-teal-300 to-emerald-300 bg-clip-text text-transparent">
-                Trusted by businesses worldwide
-              </span>
-            </h2>
-            <p className="text-cyan-100 text-lg md:text-xl leading-relaxed mb-10">
-              Delivering holistic wellness solutions across continents
-            </p>
-          </div>
-
-          {/* Global Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
-              <div className="text-3xl font-bold text-cyan-400 mb-2">20+</div>
-              <div className="text-gray-300">Countries</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
-              <div className="text-3xl font-bold text-teal-400 mb-2">500+</div>
-              <div className="text-gray-300">Clients</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">98%</div>
-              <div className="text-gray-300">Satisfaction Rate</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
-              <div className="text-3xl font-bold text-blue-400 mb-2">24/7</div>
-              <div className="text-gray-300">Support</div>
-            </div>
-          </div>
-
-          {/* Interactive Globe */}
-          <div className="relative group mb-16">
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500" />
-            <div className="relative p-8 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl border border-cyan-900/50">
-              <Globe3D />
-            </div>
-          </div>
-
-          {/* Region Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
-              <div className="text-cyan-400 font-semibold mb-1">Middle East & GCC</div>
-              <div className="text-gray-400 text-sm">150+ Clients</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
-              <div className="text-teal-400 font-semibold mb-1">North America</div>
-              <div className="text-gray-400 text-sm">200+ Clients</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
-              <div className="text-emerald-400 font-semibold mb-1">South America</div>
-              <div className="text-gray-400 text-sm">100+ Clients</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
-              <div className="text-blue-400 font-semibold mb-1">Asia Pacific</div>
-              <div className="text-gray-400 text-sm">50+ Clients</div>
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center mt-16">
-            <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-white font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/25">
-              Explore Global Opportunities
-              <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
     
-       {/* Testimonials Section */}
-      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
+    
+  {/* Testimonials Section */}
+  <section className="relative py-24 overflow-hidden bg-gradient-to-br from-green-100 via-blue-100 to-purple-100">
         {/* Animated Background */}
-      
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.04]" />
+          <div className="absolute top-0 w-full h-64 bg-gradient-to-b from-green-200/60 to-transparent" />
+          <div className="absolute bottom-0 w-full h-64 bg-gradient-to-t from-purple-200/60 to-transparent" />
+          {/* Animated circles */}
+          <div className="absolute top-1/4 -right-20 w-60 h-60 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-75 animate-blob" />
+          <div className="absolute top-1/3 -left-20 w-60 h-60 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-75 animate-blob animation-delay-2000" />
+          <div className="absolute bottom-1/4 left-1/2 w-60 h-60 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-75 animate-blob animation-delay-4000" />
+        </div>
 
         <div className="container mx-auto px-4 relative">
           {/* Section Header */}
           <div className="text-center mb-20">
           <div className="inline-block">
-              <div className="flex items-center justify-center space-x-2 bg-white/20 backdrop-blur-xl rounded-full px-4 py-1 border border-white/20 shadow-lg shadow-black/5">
-                <span className="relative flex h-2 w-2">
+              <div className="flex items-center justify-center space-x-2 bg-white/40 backdrop-blur-xl rounded-full px-6 py-2 border border-white/30 shadow-lg shadow-black/5">
+                <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-indigo-500"></span>
                 </span>
                 <span className="text-sm font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 text-transparent bg-clip-text">
-                 Our Client Testimonials
+                  Our Client Testimonials
                 </span>
               </div>
             </div>
-            
             <div className="mt-8 relative">
               <div className="absolute left-1/2 -translate-x-1/2 top-0 w-40 h-40 bg-gradient-to-r from-green-200 via-blue-200 to-purple-200 rounded-full blur-3xl opacity-30"></div>
               <h2 className="relative text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -1621,36 +1571,35 @@ export default function Home() {
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="group relative p-8 rounded-2xl transition-all duration-500"
+                className="group relative p-8 rounded-2xl transition-all duration-500 hover:transform hover:scale-[1.02]"
               >
                 {/* Card Background with Gradient Border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-100 via-sky-100 to-violet-100 rounded-2xl opacity-50 group-hover:opacity-100 blur transition-opacity duration-500" />
-                <div className="absolute inset-[2px] bg-white rounded-2xl backdrop-blur-xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-200 via-sky-200 to-violet-200 rounded-2xl opacity-60 group-hover:opacity-100 blur transition-opacity duration-500" />
+                <div className="absolute inset-[1px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-lg shadow-black/5 border border-white/20"></div>
                 
-                {/* Content */}
-                <div className="relative">
+                <div className="relative z-10">
                   {/* Quote Icon */}
-                  <div className="absolute -top-4 -left-2 text-6xl leading-none text-green-200 font-serif">&#8220;</div>
+                  <div className="absolute -top-4 -left-2 text-6xl leading-none text-emerald-300 font-serif">&#8220;</div>
                   
                   {/* Rating */}
                   <div className="flex justify-end mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <svg key={i} className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
                   </div>
 
                   {/* Testimonial Content */}
-                  <p className="text-gray-700 leading-relaxed mb-6 italic">
+                  <p className="text-gray-800 leading-relaxed mb-6 italic">
                     {testimonial.content}
                   </p>
 
                   {/* Author Info */}
                   <div className="flex items-center gap-4">
                     <div className="relative w-14 h-14">
-                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-sky-400 to-violet-400 rounded-full animate-spin-slow opacity-70 blur-sm" />
-                      <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white">
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-sky-500 to-violet-500 rounded-full animate-spin-slow opacity-80 blur-sm" />
+                      <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-md">
                         <Image
                           src={testimonial.image}
                           alt={testimonial.name}
@@ -1661,13 +1610,13 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
-                      <p className="text-sm text-gray-600">{testimonial.role}</p>
+                      <p className="text-gray-700">{testimonial.role}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Hover Effects */}
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/10 via-sky-400/10 to-violet-400/10 rounded-2xl opacity-0 group-hover:opacity-100 transform scale-[1.02] pointer-events-none transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-sky-500/5 to-violet-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             ))}
           </div>
@@ -1683,27 +1632,25 @@ export default function Home() {
                     </svg>
                   ),
                   text: '100% Satisfaction',
-                  color: 'text-green-500'
+                  color: 'text-emerald-700'
                 },
                 {
                   icon: (
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                   </svg>
                   ),
                   text: '5-Star Rated',
-                  color: 'text-blue-500'
+                  color: 'text-blue-700'
                 },
                 {
                   icon: (
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-        d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-      />
+                    <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   ),
                   text: 'Verified Reviews',
-                  color: 'text-purple-500'
+                  color: 'text-purple-700'
                 }
               ].map((item, index) => (
                 <div
