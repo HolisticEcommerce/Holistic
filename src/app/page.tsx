@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { FaReact, FaNodeJs, FaWordpress, FaHtml5, FaBootstrap, FaPhp } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiTypescript, SiAngular, SiVuedotjs, SiMagento, SiDrupal, SiJoomla } from 'react-icons/si';
 import { TbBrandJavascript } from 'react-icons/tb';   
+import ClientOnly from '@/components/ClientOnly';
 
 const stats = [
   { label: 'Active Users', value: 100, suffix: '+' },
@@ -27,130 +28,251 @@ export default function Home() {
         <div className="absolute -bottom-1/4 left-1/3 w-1/2 h-1/2 bg-purple-500/20 rounded-full blur-3xl animate-blob animation-delay-4000" />
       </div>
 
+     
       {/* Hero Section */}
-      <section className="relative min-h-screen overflow-hidden perspective-1000">
-        {/* Sky Background */}
+      <section className="relative min-h-[100svh] overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-purple-900/20 to-slate-900">
+        {/* Enhanced Background Elements with Stars */}
         <div className="absolute inset-0 z-0">
-          <div className="night-sky">
-            <div className="stars" />
-            <div className="shooting-stars" />
-            <div className="aurora" />
+          {/* Improved Stars Background */}
+          <div className="stars-container">
+            <div id="stars-small"></div>
+            <div id="stars-medium"></div>
+            <div id="stars-large"></div>
+            <div className="shooting-stars"></div>
           </div>
-        </div>
-
-        {/* 3D Background Elements */}
-        <div className="absolute inset-0 z-10">
-          <div className="absolute inset-0 bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-30" />
+          
+          {/* Enhanced Grid Overlay */}
+          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-10" />
+          
+          {/* Improved Background Gradients */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent animate-pulse-slow" />
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-cyan-500/10 to-emerald-500/10 animate-gradient-x" />
-          <div className="absolute w-[300px] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] -right-32 sm:-right-48 lg:-right-64 top-0 bg-purple-500/30 rounded-full blur-3xl animate-blob" />
-          <div className="absolute w-[300px] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] -left-32 sm:-left-48 lg:-left-64 bottom-0 bg-cyan-500/30 rounded-full blur-3xl animate-blob animation-delay-2000" />
+          
+          {/* Nebula Effects */}
+          <div className="absolute top-1/4 -right-1/4 w-1/2 h-1/2 bg-purple-500/10 rounded-full blur-3xl animate-nebula"></div>
+          <div className="absolute bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-cyan-500/10 rounded-full blur-3xl animate-nebula animation-delay-2000"></div>
         </div>
 
-        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 lg:pb-32 z-20">
-          {/* Hero Content */}
-          <div className="flex flex-col items-center justify-center text-center space-y-8 sm:space-y-10 lg:space-y-12">
-            {/* Main Heading with 3D Effect */}
-            <div className="relative">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white">
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400 animate-gradient-x pb-2 sm:pb-3">
-                  Transforming Ideas
-                </span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 animate-gradient-x animate-delay-300">
-                  Into Digital Reality
-                </span>
-              </h1>
-              {/* 3D Floating Elements */}
-              <div className="absolute -top-16 sm:-top-20 left-1/2 transform -translate-x-1/2 w-full h-full pointer-events-none">
-                <div className="absolute top-0 left-0 w-16 sm:w-20 h-16 sm:h-20 bg-purple-500/10 rounded-full blur-xl animate-float" />
-                <div className="absolute top-8 sm:top-10 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-cyan-500/10 rounded-full blur-xl animate-float animation-delay-1000" />
-                <div className="absolute bottom-0 left-1/4 w-20 sm:w-24 h-20 sm:h-24 bg-emerald-500/10 rounded-full blur-xl animate-float animation-delay-2000" />
-              </div>
-            </div>
+        {/* Enhanced Stars Styles */}
+        <style jsx global>{`
+          @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.2; transform: scale(0.9); }
+          }
 
-            {/* Description with Typing Effect */}
-            <p className="relative mx-auto max-w-xl sm:max-w-2xl text-base sm:text-lg lg:text-xl text-gray-300 leading-7 sm:leading-8 typewriter px-4">
-              We specialize in creating innovative digital solutions that help businesses thrive in the modern world. Our team of experts combines creativity with technical excellence.
-            </p>
+          @keyframes shooting-star {
+            0% {
+              transform: translate(200%, -200%) rotate(-45deg);
+              opacity: 0;
+            }
+            5% {
+              opacity: 1;
+            }
+            15% {
+              opacity: 1;
+            }
+            25% {
+              opacity: 0;
+              transform: translate(-200%, 200%) rotate(-45deg);
+            }
+            100% {
+              opacity: 0;
+              transform: translate(-200%, 200%) rotate(-45deg);
+            }
+          }
 
-            {/* Unique Modern Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 justify-center w-full max-w-xs sm:max-w-none mx-auto">
-              <div className="group relative w-full sm:w-auto">
-                <div className="absolute -inset-[3px] bg-gradient-to-r from-purple-600/75 via-cyan-500/75 to-emerald-500/75 rounded-xl blur-lg opacity-70 group-hover:opacity-100 animate-pulse transition-all duration-500"></div>
-                <div className="relative flex items-center w-full">
-                  <Link 
-                    href="/contact"
-                    className="relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-black border border-white/10 rounded-xl flex items-center justify-center gap-2 transform-gpu transition-all duration-500 group-hover:border-white/25 overflow-hidden"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-cyan-500/10 to-emerald-500/10 group-hover:opacity-50 transition-opacity duration-500"></div>
-                    <span className="relative font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400">
-                      Free Consultation
-                    </span>
-                    <div className="relative w-6 h-6 flex items-center justify-center overflow-hidden">
-                      <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-full">→</div>
-                      <div className="absolute inset-0 flex items-center justify-center -translate-x-full transition-transform duration-300 group-hover:translate-x-0">→</div>
-                    </div>
-                    <div className="absolute top-0 right-0 w-12 h-full bg-gradient-to-l from-white/5 via-white/10 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
-                  </Link>
-                </div>
-              </div>
+          @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+          }
 
-              <div className="group relative w-full sm:w-auto">
-                <div className="absolute -inset-[3px] bg-gradient-to-r from-emerald-500/75 via-cyan-500/75 to-purple-600/75 rounded-xl blur-lg opacity-70 group-hover:opacity-100 animate-pulse transition-all duration-500"></div>
-                <div className="relative flex items-center w-full">
-                  <Link 
-                    href="/about"
-                    className="relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-black border border-white/10 rounded-xl flex items-center justify-center gap-2 transform-gpu transition-all duration-500 group-hover:border-white/25 overflow-hidden"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-purple-600/10 group-hover:opacity-50 transition-opacity duration-500"></div>
-                    <span className="relative font-semibold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400">
-                      Learn More
-                    </span>
-                    <div className="relative w-6 h-6 flex items-center justify-center overflow-hidden">
-                      <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-full">→</div>
-                      <div className="absolute inset-0 flex items-center justify-center -translate-x-full transition-transform duration-300 group-hover:translate-x-0">→</div>
-                    </div>
-                    <div className="absolute top-0 right-0 w-12 h-full bg-gradient-to-l from-white/5 via-white/10 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
-                  </Link>
-                </div>
-              </div>
-            </div>
+          .stars-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            transform: translateZ(0);
+            pointer-events: none;
+          }
 
-            {/* Modern Floating Stats Grid */}
-            <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full max-w-6xl mx-auto px-4 sm:px-6">
-              {stats.map((stat, index) => (
-                <div key={index} className="group relative">
-                  <div className="absolute -inset-[2px] bg-gradient-to-r from-purple-600/50 via-cyan-500/50 to-emerald-500/50 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-700 animate-pulse"></div>
-                  <div className="relative bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 h-full transform-gpu transition-all duration-500 group-hover:border-white/20 group-hover:translate-y-[-2px] group-hover:shadow-[0_0_2rem_-0.5rem_rgba(255,255,255,0.1)]">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-cyan-500/10 to-emerald-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="absolute inset-0 overflow-hidden rounded-2xl">
-                      <div className="absolute w-2 h-2 bg-white/10 rounded-full top-[20%] left-[10%] animate-float-slow"></div>
-                      <div className="absolute w-2 h-2 bg-white/10 rounded-full top-[60%] right-[20%] animate-float-slower"></div>
-                      <div className="absolute w-1.5 h-1.5 bg-white/10 rounded-full bottom-[30%] left-[30%] animate-float"></div>
-                    </div>
-                    <div className="relative flex flex-col items-center">
-                      <div className="text-3xl xs:text-4xl sm:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400 mb-2 sm:mb-3 min-h-[3rem] sm:min-h-[3.5rem] flex items-center">
-                        <NumberCounter
-                          end={stat.value}
-                          suffix={stat.suffix}
-                          duration={2500}
-                        />
-                      </div>
-                      <div className="relative">
-                        <div className="absolute -inset-x-4 -top-2 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                        <span className="text-xs sm:text-sm text-gray-400 font-medium tracking-wide uppercase">
-                          {stat.label}
-                        </span>
-                        <div className="absolute -inset-x-4 -bottom-2 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                      </div>
-                    </div>
-                  </div>
+          #stars-small {
+            width: 1px;
+            height: 1px;
+            background: transparent;
+            box-shadow: ${Array.from({ length: 700 }, () => {
+              const x = Math.floor(Math.random() * 2000);
+              const y = Math.floor(Math.random() * 2000);
+              return `${x}px ${y}px #fff`;
+            }).join(',')};
+            animation: twinkle 8s ease-in-out infinite;
+            animation-delay: ${Math.random() * -15}s;
+          }
+
+          #stars-medium {
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            box-shadow: ${Array.from({ length: 200 }, () => {
+              const x = Math.floor(Math.random() * 2000);
+              const y = Math.floor(Math.random() * 2000);
+              return `${x}px ${y}px rgba(255,255,255,0.8)`;
+            }).join(',')};
+            animation: twinkle 12s ease-in-out infinite;
+            animation-delay: ${Math.random() * -15}s;
+          }
+
+          #stars-large {
+            width: 3px;
+            height: 3px;
+            background: transparent;
+            box-shadow: ${Array.from({ length: 100 }, () => {
+              const x = Math.floor(Math.random() * 2000);
+              const y = Math.floor(Math.random() * 2000);
+              return `${x}px ${y}px rgba(255,255,255,0.9)`;
+            }).join(',')};
+            animation: twinkle 15s ease-in-out infinite;
+            animation-delay: ${Math.random() * -15}s;
+          }
+
+          .shooting-stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          }
+
+          .shooting-stars::before, .shooting-stars::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+            animation: shooting-star 10s linear infinite;
+          }
+
+          .shooting-stars::after {
+            animation-delay: 5s;
+          }
+        `}</style>
+
+        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 lg:pt-32 z-20">
+          {/* Floating Tech Stack - Hide on smaller screens */}
+          <div className="hidden md:block absolute top-20 -left-10 w-24 h-screen pointer-events-none select-none">
+            <div className="relative w-full h-full">
+              {[FaReact, SiNextdotjs, SiTailwindcss, FaNodeJs, SiTypescript].map((Icon, index) => (
+                <div
+                  key={index}
+                  className="absolute left-0 transform hover:scale-110 transition-transform"
+                  style={{
+                    top: `${index * 20}%`,
+                    animation: `float ${3 + index * 0.5}s ease-in-out infinite`,
+                    animationDelay: `${index * 0.5}s`
+                  }}
+                >
+                  <Icon className="w-8 md:w-10 lg:w-12 h-8 md:h-10 lg:h-12 text-white/20 hover:text-white/40 transition-colors" />
                 </div>
               ))}
             </div>
           </div>
 
-        
+          {/* Mirror the tech stack on the right - Hide on smaller screens */}
+          <div className="hidden md:block absolute top-20 -right-10 w-24 h-screen pointer-events-none select-none">
+            <div className="relative w-full h-full">
+              {[SiVuedotjs, FaWordpress, SiAngular, TbBrandJavascript, FaHtml5].map((Icon, index) => (
+                <div
+                  key={index}
+                  className="absolute right-0 transform hover:scale-110 transition-transform"
+                  style={{
+                    top: `${index * 20}%`,
+                    animation: `float ${3 + index * 0.5}s ease-in-out infinite`,
+                    animationDelay: `${index * 0.5}s`
+                  }}
+                >
+                  <Icon className="w-8 md:w-10 lg:w-12 h-8 md:h-10 lg:h-12 text-white/20 hover:text-white/40 transition-colors" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center justify-center text-center space-y-8 md:space-y-12">
+            {/* Main Heading with Enhanced 3D Effect */}
+            <div className="relative max-w-[90vw] sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600/30 via-cyan-600/30 to-emerald-600/30 rounded-lg blur-xl opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+              <div className="relative">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-white">
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400 animate-gradient-x pb-2">
+                    Transforming Ideas
+                  </span>
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 animate-gradient-x animate-delay-300">
+                    Into Digital Reality
+                  </span>
+                </h1>
+                <p className="mt-6 md:mt-8 text-lg sm:text-xl md:text-2xl text-gray-300/90 max-w-xl sm:max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
+                  We craft cutting-edge digital solutions that empower businesses to thrive in the modern world.
+                </p>
+              </div>
+            </div>
+
+            {/* Enhanced CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-xs sm:max-w-xl mx-auto px-4 sm:px-0">
+              <Link 
+                href="/contact"
+                className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-500 via-cyan-500 to-emerald-500 rounded-xl text-white font-semibold text-base sm:text-lg transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 overflow-hidden"
+              >
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 via-cyan-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></span>
+                <span className="absolute inset-0 w-1/4 h-full bg-white/20 skew-x-[45deg] group-hover:-translate-x-[500%] transition-transform duration-1000"></span>
+                <span className="relative flex items-center justify-center gap-2">
+                  Get Started
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </Link>
+              
+              <Link 
+                href="/portfolio"
+                className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-white font-semibold text-base sm:text-lg transition-all duration-300 hover:bg-white/10 hover:scale-105 hover:border-white/20"
+              >
+                <span className="relative flex items-center justify-center gap-2">
+                  View Our Work
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300 opacity-0 group-hover:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+            </div>
+
+            {/* Enhanced Stats Section */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 w-full max-w-xs sm:max-w-2xl lg:max-w-6xl mx-auto mt-8 sm:mt-12 px-2 sm:px-4 lg:px-0">
+              {stats.map((stat, index) => (
+                <ClientOnly key={index}>
+                  <div
+                    key={index}
+                    className="group relative"
+                  >
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600/50 via-cyan-600/50 to-emerald-600/50 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-500"></div>
+                    <div className="relative">
+                      <div className="bg-black/50 backdrop-blur-xl border border-white/10 rounded-lg p-3 sm:p-4 lg:p-6 h-full transform group-hover:scale-[1.02] transition-transform duration-500">
+                        <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400">
+                          <ClientOnly>
+                            <NumberCounter end={stat.value} suffix={stat.suffix} />
+                          </ClientOnly>
+                        </div>
+                        <div className="mt-1 sm:mt-2 text-xs sm:text-sm text-gray-400 font-medium uppercase tracking-wider group-hover:text-gray-300 transition-colors duration-300">
+                          {stat.label}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ClientOnly>
+              ))}
+            </div>
+          </div>
         </div>
+
+        {/* Enhanced Decorative Elements */}
+        <div className="absolute top-1/4 right-0 w-48 sm:w-72 h-48 sm:h-72 bg-gradient-to-br from-purple-500/30 to-cyan-500/30 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-gradient-to-br from-cyan-500/30 to-emerald-500/30 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
       </section>
 
       {/* About Section */}
@@ -291,7 +413,7 @@ export default function Home() {
                 className="group relative p-8 rounded-2xl bg-white/90 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:bg-white/100"
               >
                 <div className="relative w-20 h-20 mx-auto mb-8">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl rotate-6 group-hover:rotate-0 transition-transform duration-300`}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-r ${feature.gradient} rounded-2xl rotate-6 group-hover:rotate-0 transition-transform duration-300`}></div>
                   <div className="absolute inset-0 flex items-center justify-center text-white">
                     {feature.icon}
                   </div>
@@ -319,7 +441,9 @@ export default function Home() {
                 >
                   <div className="relative">
                     <div className="text-4xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <NumberCounter end={stat.number} suffix={stat.suffix} />
+                      <ClientOnly>
+                        <NumberCounter end={stat.number} suffix={stat.suffix} />
+                      </ClientOnly>
                     </div>
                     <div className="h-1 w-0 group-hover:w-full bg-white/40 mx-auto transition-all duration-500 rounded-full"></div>
                   </div>
@@ -357,7 +481,7 @@ export default function Home() {
    <section className="relative py-24 overflow-hidden bg-slate-900">
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay" />
+          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03]" />
           <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-blue-500/20 rounded-full blur-3xl animate-blob" />
           <div className="absolute top-1/3 -right-1/4 w-1/2 h-1/2 bg-emerald-500/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
           <div className="absolute -bottom-1/4 left-1/3 w-1/2 h-1/2 bg-purple-500/20 rounded-full blur-3xl animate-blob animation-delay-4000" />
@@ -419,7 +543,7 @@ export default function Home() {
                 gradient: 'from-emerald-500 via-purple-500 to-blue-500',
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2h2v4l.586-.586z" />
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V6a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2h2v4l.586-.586z" />
                   </svg>
                 )
               }
@@ -1108,7 +1232,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-br from-teal-500 via-cyan-500 to-indigo-500 rounded-xl rotate-6 group-hover:rotate-0 transition-transform duration-300"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <svg className="w-7 h-7 text-white drop-shadow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2h2v4l.586-.586z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V6A2 2 0 0020 4H8a2 2 0 00-2 2v12a2 2 0 002 2h2v4l.586-.586z" />
                       </svg>
                     </div>
                   </div>
@@ -1498,7 +1622,6 @@ export default function Home() {
       </section>
     
     
-    
   {/* Testimonials Section */}
   <section className="relative py-24 overflow-hidden bg-gradient-to-br from-green-100 via-blue-100 to-purple-100">
         {/* Animated Background */}
@@ -1507,9 +1630,9 @@ export default function Home() {
           <div className="absolute top-0 w-full h-64 bg-gradient-to-b from-green-200/60 to-transparent" />
           <div className="absolute bottom-0 w-full h-64 bg-gradient-to-t from-purple-200/60 to-transparent" />
           {/* Animated circles */}
-          <div className="absolute top-1/4 -right-20 w-60 h-60 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-75 animate-blob" />
-          <div className="absolute top-1/3 -left-20 w-60 h-60 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-75 animate-blob animation-delay-2000" />
-          <div className="absolute bottom-1/4 left-1/2 w-60 h-60 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-75 animate-blob animation-delay-4000" />
+          <div className="absolute top-1/4 -right-20 w-60 h-60 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob" />
+          <div className="absolute top-1/3 -left-20 w-60 h-60 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000" />
+          <div className="absolute bottom-1/4 left-1/2 w-60 h-60 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000" />
         </div>
 
         <div className="container mx-auto px-4 relative">
@@ -1626,7 +1749,7 @@ export default function Home() {
                 {
                   icon: (
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
                     </svg>
                   ),
                   text: '100% Satisfaction',
@@ -1635,7 +1758,7 @@ export default function Home() {
                 {
                   icon: (
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12 17c.446 0 .87-.336 1.155-.79l2.414 2.414C15.355 20.334 13.578 22 11 22c-3.866 0-7-3.134-7-7 0-.448.104-.436.255-.273l2.414 2.414z" />
                   </svg>
                   ),
                   text: '5-Star Rated',
@@ -1644,7 +1767,7 @@ export default function Home() {
                 {
                   icon: (
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7l-4.586 4.586a1 1 0 01-1.414 0L12 6.586 9.586 8 6 2z" clipRule="evenodd" />
                   </svg>
                   ),
                   text: 'Verified Reviews',
