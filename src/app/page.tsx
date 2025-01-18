@@ -1,13 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import NumberCounter from '@/components/NumberCounter';
 import Image from 'next/image';
 import { FaReact, FaNodeJs, FaWordpress, FaHtml5, FaBootstrap, FaPhp } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiTypescript, SiAngular, SiVuedotjs, SiMagento, SiDrupal, SiJoomla } from 'react-icons/si';
 import { TbBrandJavascript } from 'react-icons/tb';   
-import ClientOnly from '@/components/ClientOnly';
+import AnimatedBackground from '@/components/AnimatedBackground';
 
 const stats = [
   { label: 'Active Users', value: 100, suffix: '+' },
@@ -16,11 +16,32 @@ const stats = [
   { label: 'Success Rate', value: 99, suffix: '%' }
 ];
 
-
-
 export default function Home() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return (
+      <main className="min-h-screen bg-slate-900 relative overflow-hidden">
+        {/* Static pre-rendered content */}
+        <div className="container mx-auto px-4 py-24">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-white">
+              <div className="text-4xl">{stat.value.toLocaleString()}{stat.suffix}</div>
+              <div className="text-gray-400">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-slate-900 relative overflow-hidden">
+      <AnimatedBackground />
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-blue-500/20 rounded-full blur-3xl animate-blob" />
@@ -245,26 +266,22 @@ export default function Home() {
             {/* Enhanced Stats Section */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 w-full max-w-xs sm:max-w-2xl lg:max-w-6xl mx-auto mt-8 sm:mt-12 px-2 sm:px-4 lg:px-0">
               {stats.map((stat, index) => (
-                <ClientOnly key={index}>
-                  <div
-                    key={index}
-                    className="group relative"
-                  >
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600/50 via-cyan-600/50 to-emerald-600/50 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-500"></div>
-                    <div className="relative">
-                      <div className="bg-black/50 backdrop-blur-xl border border-white/10 rounded-lg p-3 sm:p-4 lg:p-6 h-full transform group-hover:scale-[1.02] transition-transform duration-500">
-                        <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400">
-                          <ClientOnly>
-                            <NumberCounter end={stat.value} suffix={stat.suffix} />
-                          </ClientOnly>
-                        </div>
-                        <div className="mt-1 sm:mt-2 text-xs sm:text-sm text-gray-400 font-medium uppercase tracking-wider group-hover:text-gray-300 transition-colors duration-300">
-                          {stat.label}
-                        </div>
+                <div
+                  key={index}
+                  className="group relative"
+                >
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600/50 via-cyan-600/50 to-emerald-600/50 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-500"></div>
+                  <div className="relative">
+                    <div className="bg-black/50 backdrop-blur-xl border border-white/10 rounded-lg p-3 sm:p-4 lg:p-6 h-full transform group-hover:scale-[1.02] transition-transform duration-500">
+                      <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400">
+                        <NumberCounter end={stat.value} suffix={stat.suffix} />
+                      </div>
+                      <div className="mt-1 sm:mt-2 text-xs sm:text-sm text-gray-400 font-medium uppercase tracking-wider group-hover:text-gray-300 transition-colors duration-300">
+                        {stat.label}
                       </div>
                     </div>
                   </div>
-                </ClientOnly>
+                </div>
               ))}
             </div>
           </div>
@@ -441,9 +458,7 @@ export default function Home() {
                 >
                   <div className="relative">
                     <div className="text-4xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <ClientOnly>
-                        <NumberCounter end={stat.number} suffix={stat.suffix} />
-                      </ClientOnly>
+                      <NumberCounter end={stat.number} suffix={stat.suffix} />
                     </div>
                     <div className="h-1 w-0 group-hover:w-full bg-white/40 mx-auto transition-all duration-500 rounded-full"></div>
                   </div>
@@ -679,7 +694,7 @@ export default function Home() {
               },
               {
                 number: '03',
-                image: 'https://images.unsplash.com/photo-1551650975-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+                image: 'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
                 icon: (
                   <svg className="w-8 h-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V6A2 2 0 0020 4H8a2 2 0 00-2 2v12a2 2 0 002 2h2v4l.586-.586z" />
@@ -851,7 +866,7 @@ export default function Home() {
                     'Website Hosting': true,
                     'Business Email': true,
                     'Secured Certificate': true,
-                    
+                   
                   },
                   design: {
                     'Home Page Design': '5-10 Pages',
@@ -1172,7 +1187,7 @@ export default function Home() {
                             Enquire Now
                           </span>
                           <svg className="w-5 h-5 ml-2 text-white transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                           </svg>
                         </div>
                       </div>
@@ -1342,12 +1357,14 @@ export default function Home() {
       <section className="relative py-24">
         <div className="container mx-auto px-4">
         <div className="text-center mb-20">
-        <div className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-500/10 to-violet-500/10 rounded-full py-2 px-6 mb-6 shadow-lg shadow-blue-500/10 backdrop-blur-sm border border-blue-500/20">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
-              </span>
-              <span className="text-blue-700 text-sm font-semibold tracking-wide uppercase">Our Tech Stack</span>
+        <div className="inline-block">
+              <div className="flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-500/10 to-violet-500/10 rounded-full py-2 px-6 mb-6 shadow-lg shadow-blue-500/10 backdrop-blur-sm border border-blue-500/20">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                </span>
+                <span className="text-blue-700 text-sm font-semibold tracking-wide uppercase">Our Tech Stack</span>
+              </div>
             </div>
             <h2 className="text-4xl font-bold text-center text-white mb-8">Technologies We Use</h2>
            
@@ -1706,7 +1723,7 @@ export default function Home() {
                   <div className="flex justify-end mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <svg key={i} className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-1.175 0l-2.8-2.034c-.563-.527-.94-1.336-1.175-2.034a1 1 0 00-.95-1.69H7.39c-.3 0-.59.155-.95.69L2.98 19.92c-.563.527-.94 1.336-1.175 2.034a1 1 0 00-.588 1.81l2.8 2.034a1 1 0 001.175 0l2.8-2.034a1 1 0 001.902 0l1.07-3.292c.3-.921.59-1.836.95-2.697L9.425 2.927z" />
                       </svg>
                     ))}
                   </div>
@@ -1767,7 +1784,7 @@ export default function Home() {
                 {
                   icon: (
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7l-4.586 4.586a1 1 0 01-1.414 0L12 6.586 9.586 8 6 2z" clipRule="evenodd" />
+                    <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2v-8a2 2 0 00-2-2H6a2 2 0 00-2 2H2a2 2 0 002-2h2v-1a2 2 0 012-2h8a2 2 0 012 2v1z" clipRule="evenodd" />
                   </svg>
                   ),
                   text: 'Verified Reviews',

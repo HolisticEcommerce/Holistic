@@ -10,7 +10,8 @@ interface NumberCounterProps {
 }
 
 export default function NumberCounter({ end, duration = 2000, suffix = '' }: NumberCounterProps) {
-  const [count, setCount] = useState(0);
+  const [isClient, setIsClient] = useState(false);
+  const [count, setCount] = useState(end);
   const countRef = useRef(count);
   const { ref, inView } = useInView({
     threshold: 0.3,
@@ -18,9 +19,16 @@ export default function NumberCounter({ end, duration = 2000, suffix = '' }: Num
   });
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+    
     if (inView) {
+      setCount(0);
+      countRef.current = 0;
       const startTime = Date.now();
-      const startValue = countRef.current;
       
       const updateCount = () => {
         const currentTime = Date.now();
@@ -28,21 +36,29 @@ export default function NumberCounter({ end, duration = 2000, suffix = '' }: Num
         
         if (elapsedTime < duration) {
           const progress = elapsedTime / duration;
-          // Easing function for smooth animation
           const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-          const nextCount = Math.floor(startValue + (end - startValue) * easeOutQuart);
+          const nextCount = Math.floor(easeOutQuart * end);
           
           setCount(nextCount);
           countRef.current = nextCount;
           requestAnimationFrame(updateCount);
         } else {
           setCount(end);
+          countRef.current = end;
         }
       };
       
       requestAnimationFrame(updateCount);
     }
-  }, [end, duration, inView]);
+  }, [end, duration, inView, isClient]);
+
+  if (!isClient) {
+    return (
+      <span ref={ref} className="inline-block">
+        {end.toLocaleString()}{suffix}
+      </span>
+    );
+  }
 
   return (
     <span ref={ref} className="inline-block">

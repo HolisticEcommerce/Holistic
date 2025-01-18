@@ -88,6 +88,7 @@ export default {
         'float-delayed-tech': 'float 6s ease-in-out 2s infinite',
         'shine-tech': 'shine 1.5s ease-in-out infinite',
         'blob-tech': 'blob 7s infinite',
+        'twinkle': 'twinkle 3s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -205,6 +206,10 @@ export default {
           '100%': {
             transform: 'translate(0px, 0px) scale(1)',
           },
+        },
+        twinkle: {
+          '0%, 100%': { opacity: '0' },
+          '50%': { opacity: '1' },
         },
       },
       backgroundImage: {
