@@ -48,7 +48,7 @@ const Home = () => {
 
         <div className="container relative mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 lg:pt-32 z-20">
           {/* Floating Tech Stack - Hide on smaller screens */}
-          <div className="hidden md:block absolute top-20 -left-10 w-24 h-screen pointer-events-none select-none">
+          <div className="hidden md:block absolute top-20 w-24 h-screen pointer-events-none select-none">
             <div className="relative w-full h-full">
               {[FaReact, SiNextdotjs, SiTailwindcss, FaNodeJs, SiTypescript].map((Icon, index) => (
                 <div
@@ -67,7 +67,7 @@ const Home = () => {
           </div>
 
           {/* Mirror the tech stack on the right - Hide on smaller screens */}
-          <div className="hidden md:block absolute top-20 -right-10 w-24 h-screen pointer-events-none select-none">
+          <div className="hidden md:block absolute top-20 right-10 w-24 h-screen pointer-events-none select-none">
             <div className="relative w-full h-full">
               {[SiVuedotjs, FaWordpress, SiAngular, TbBrandJavascript, FaHtml5].map((Icon, index) => (
                 <div
