@@ -8,6 +8,7 @@ import { FaReact, FaNodeJs, FaWordpress, FaHtml5, FaBootstrap, FaPhp } from 'rea
 import { SiNextdotjs, SiTailwindcss, SiTypescript, SiAngular, SiVuedotjs, SiMagento, SiDrupal, SiJoomla } from 'react-icons/si';
 import { TbBrandJavascript } from 'react-icons/tb';   
 import ClientOnly from '@/components/ClientOnly';
+import StarryBackground from '@/components/StarryBackground';
 
 const stats = [
   { label: 'Active Users', value: 100, suffix: '+' },
@@ -30,14 +31,9 @@ const Home = () => {
       <section className="relative min-h-[100svh] overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-purple-900/20 to-slate-900">
         {/* Enhanced Background Elements with Stars */}
         <div className="absolute inset-0 z-0">
-          {/* Improved Stars Background */}
-          <div className="stars-container">
-            <div id="stars-small"></div>
-            <div id="stars-medium"></div>
-            <div id="stars-large"></div>
-            <div className="shooting-stars"></div>
-          </div>
-          
+          <ClientOnly>
+            <StarryBackground />
+          </ClientOnly>
           {/* Enhanced Grid Overlay */}
           <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-10" />
           
@@ -1615,7 +1611,7 @@ const Home = () => {
                   <div className="flex justify-end mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <svg key={i} className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
                       </svg>
                     ))}
                   </div>
@@ -1658,7 +1654,7 @@ const Home = () => {
                 {
                   icon: (
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
                     </svg>
                   ),
                   text: '100% Satisfaction',
@@ -1667,7 +1663,7 @@ const Home = () => {
                 {
                   icon: (
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12 17c.446 0 .87-.336 1.155-.79l2.414 2.414C15.355 20.333 13.578 22 11 22c-3.866 0-7-3.134-7-7 0-.448.023-.886.062-1.33L6.62 9.62C6.45 9.45 6.55 9 7 9h2v7l-.445-1.332C8.183 15.467 10.051 17 12 17z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                   ),
                   text: '5-Star Rated',
