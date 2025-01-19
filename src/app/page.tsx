@@ -1,14 +1,25 @@
-'use client';
-
-import React from 'react';
+import React, { Suspense } from 'react';
+import { Metadata } from 'next';
 import Link from 'next/link'; 
-import NumberCounter from '@/components/NumberCounter';
 import Image from 'next/image';
 import { FaReact, FaNodeJs, FaWordpress, FaHtml5, FaBootstrap, FaPhp } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiTypescript, SiAngular, SiVuedotjs, SiMagento, SiDrupal, SiJoomla } from 'react-icons/si';
 import { TbBrandJavascript } from 'react-icons/tb';   
 import ClientOnly from '@/components/ClientOnly';
 import StarryBackground from '@/components/StarryBackground';
+import NumberCounter from '@/components/NumberCounter';
+
+// Define metadata for SEO
+export const metadata: Metadata = {
+  title: 'Holistic - Modern Web Solutions',
+  description: 'Holistic provides cutting-edge web development solutions using React, Next.js, Node.js and more. Transform your digital presence with our expertise.',
+  keywords: 'web development, React, Next.js, Node.js, TypeScript, full-stack development',
+  openGraph: {
+    title: 'Holistic - Modern Web Solutions',
+    description: 'Transform your digital presence with cutting-edge web development solutions',
+    images: ['/og-image.jpg'],
+  },
+};
 
 const stats = [
   { label: 'Active Users', value: 100, suffix: '+' },
@@ -23,17 +34,30 @@ const Home = () => {
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02] mix-blend-overlay" />
-        <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-blue-500/20 rounded-full blur-3xl animate-blob" />
-        <div className="absolute top-1/3 -right-1/4 w-1/2 h-1/2 bg-emerald-500/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
-        <div className="absolute -bottom-1/4 left-1/3 w-1/2 h-1/2 bg-purple-500/20 rounded-full blur-3xl animate-blob animation-delay-4000" />
+        <div 
+          className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-blue-500/20 rounded-full blur-3xl animate-blob"
+          style={{ willChange: 'transform' }}
+        />
+        <div 
+          className="absolute top-1/3 -right-1/4 w-1/2 h-1/2 bg-emerald-500/20 rounded-full blur-3xl animate-blob animation-delay-2000"
+          style={{ willChange: 'transform' }}
+        />
+        <div 
+          className="absolute -bottom-1/4 left-1/3 w-1/2 h-1/2 bg-purple-500/20 rounded-full blur-3xl animate-blob animation-delay-4000"
+          style={{ willChange: 'transform' }}
+        />
       </div>
+      
       {/* Hero Section */}
       <section className="relative min-h-[100svh] overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-purple-900/20 to-slate-900">
         {/* Enhanced Background Elements with Stars */}
         <div className="absolute inset-0 z-0">
-          <ClientOnly>
-            <StarryBackground />
-          </ClientOnly>
+          <Suspense fallback={<div className="w-full h-full bg-slate-900" />}>
+            <ClientOnly>
+              <StarryBackground />
+            </ClientOnly>
+          </Suspense>
+          
           {/* Enhanced Grid Overlay */}
           <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-10" />
           
@@ -148,13 +172,15 @@ const Home = () => {
                     </div>
                     <div className="relative flex flex-col items-center">
                       <div className="text-3xl xs:text-4xl sm:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400 mb-2 sm:mb-3 min-h-[3rem] sm:min-h-[3.5rem] flex items-center">
-                        <ClientOnly>
-                          <NumberCounter
-                            end={stat.value}
-                            suffix={stat.suffix}
-                            duration={2500}
-                          />
-                        </ClientOnly>
+                        <Suspense fallback={<div className="h-8 bg-slate-700 animate-pulse rounded" />}>
+                          <ClientOnly>
+                            <NumberCounter
+                              end={stat.value}
+                              suffix={stat.suffix}
+                              duration={2500}
+                            />
+                          </ClientOnly>
+                        </Suspense>
                       </div>
                       <div className="relative">
                         <div className="absolute -inset-x-4 -top-2 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
@@ -177,35 +203,32 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
-        {/* Enhanced Animated Background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02]" />
-          <div className="absolute top-0 w-full h-64 bg-gradient-to-b from-green-100/50 via-teal-100/30 to-transparent" />
-          <div className="absolute bottom-0 w-full h-64 bg-gradient-to-t from-purple-100/50 via-blue-100/30 to-transparent" />
-          {/* Improved Animated circles with better positioning and effects */}
-          <div className="absolute top-1/4 -right-20 w-72 h-72 bg-gradient-to-br from-green-200 to-emerald-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob" />
-          <div className="absolute top-1/3 -left-20 w-72 h-72 bg-gradient-to-br from-blue-200 to-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000" />
-          <div className="absolute bottom-1/4 left-1/2 w-72 h-72 bg-gradient-to-br from-purple-200 to-violet-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000" />
+      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800">
+       {/* Background with modern gradient and patterns */}
+       <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808020_1px,transparent_1px),linear-gradient(to_bottom,#80808020_1px,transparent_1px)] bg-[size:14px_24px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-100/95 via-blue-100/95 to-purple-100/95 backdrop-blur-3xl" />
+          
+          {/* Animated gradient blobs */}
+          <div className="absolute top-0 -left-48 w-96 h-96 bg-gradient-to-r from-green-300/40 to-emerald-300/40 rounded-full mix-blend-multiply blur-2xl animate-blob" />
+          <div className="absolute top-0 -right-48 w-96 h-96 bg-gradient-to-r from-purple-300/40 to-indigo-300/40 rounded-full mix-blend-multiply blur-2xl animate-blob animation-delay-2000" />
+          <div className="absolute -bottom-48 left-1/2 w-96 h-96 bg-gradient-to-r from-blue-300/40 to-cyan-300/40 rounded-full mix-blend-multiply blur-2xl animate-blob animation-delay-4000" />
         </div>
 
         <div className="container mx-auto px-4 relative">
           {/* Section Header */}
           <div className="text-center mb-20">
-            <div className="inline-flex items-center justify-center space-x-2 bg-emerald-500/10 rounded-full py-2 px-6 mb-6 shadow-lg shadow-emerald-500/25 backdrop-blur-sm border border-emerald-500/20">
+            <div className="inline-flex items-center justify-center space-x-2 bg-emerald-600/20 rounded-full py-2 px-6 mb-6 shadow-lg shadow-emerald-600/10 backdrop-blur-sm border border-emerald-600/20">
               <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-600 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-600"></span>
               </span>
-              <span className="text-emerald-400 text-sm font-semibold tracking-wide uppercase">About Us </span>
+              <span className="text-emerald-700 text-sm font-semibold tracking-wide uppercase">About Us</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text">
+            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-700 via-teal-700 to-cyan-700 text-transparent bg-clip-text">
               Beyond Code
-              <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </h2>
-            <p className="text-xl text-emerald-600/90 mt-8 max-w-2xl mx-auto leading-relaxed">
-              Where innovation meets imagination, and technology transforms into extraordinary experiences.
-            </p>
+          
           </div>
 
           {/* Enhanced Interactive Timeline with modern SVG icons */}
@@ -268,7 +291,7 @@ const Home = () => {
                   <span className="inline-block text-sm font-semibold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2">{item.year}</span>
                   <h3 className="text-2xl font-bold mb-3 text-gray-800">{item.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r ${item.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-2xl"></div>
+                  <div className="left-0 mt-6 h-1 w-0 group-hover:w-full bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 transition-all duration-300 rounded-b-2xl"></div>
                 </div>
               </div>
             ))}
@@ -321,7 +344,7 @@ const Home = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-center mb-4 text-gray-800">{feature.title}</h3>
                 <p className="text-gray-600 text-center leading-relaxed">{feature.description}</p>
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r ${feature.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-2xl"></div>
+                <div className="absolute bottom-0 left-0 left-0 mt-6 h-1 w-0 group-hover:w-full bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-2xl"></div>
               </div>
             ))}
           </div>
@@ -342,9 +365,9 @@ const Home = () => {
                 >
                   <div className="relative">
                     <div className="text-4xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <ClientOnly>
+                      <Suspense fallback={<div className="h-8 bg-slate-700 animate-pulse rounded" />}>
                         <NumberCounter end={stat.number} />
-                      </ClientOnly>
+                      </Suspense>
                     </div>
                     <div className="h-1 w-0 group-hover:w-full bg-white/40 mx-auto transition-all duration-500 rounded-full"></div>
                   </div>
@@ -378,8 +401,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-   {/* About Agency Section */}
-   <section className="relative py-24 overflow-hidden bg-slate-900">
+    {/* About Agency Section */}
+    <section className="relative py-24 overflow-hidden bg-slate-900">
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay" />
@@ -414,7 +437,7 @@ const Home = () => {
                 gradient: 'from-blue-500 via-emerald-500 to-purple-500',
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                   </svg>
                 )
               },
@@ -424,7 +447,7 @@ const Home = () => {
                 gradient: 'from-emerald-500 via-blue-500 to-purple-500',
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002 2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                   </svg>
                 )
               },
@@ -434,7 +457,7 @@ const Home = () => {
                 gradient: 'from-purple-500 via-blue-500 to-emerald-500',
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h2v4l.586-.586z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 )
               },
@@ -444,13 +467,13 @@ const Home = () => {
                 gradient: 'from-emerald-500 via-purple-500 to-blue-500',
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V6a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2h2v4l.586-.586z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 )
               }
             ].map((item, index) => (
               <div key={index} className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-r ${item.gradient} rounded-2xl blur opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0.5 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-500" />
                 <div className="relative bg-slate-900 p-1 rounded-2xl h-full">
                   <div className="bg-slate-800/50 backdrop-blur-xl rounded-xl h-full p-6">
                     <div className={`w-16 h-16 mb-8 rounded-xl bg-gradient-to-r ${item.gradient} flex items-center justify-center text-white transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
@@ -465,7 +488,7 @@ const Home = () => {
           </div>
 
           <div className="relative mb-20">
-            <div className="absolute inset-0.5 bg-gradient-to-r from-blue-500/10 via-emerald-500/10 to-purple-500/10 rounded-3xl blur opacity-75" />
+            <div className="absolute inset-0.5 bg-gradient-to-r from-blue-500 via-emerald-500 to-purple-500 rounded-3xl blur opacity-75" />
             <div className="relative bg-slate-900 p-1 rounded-3xl">
               <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 px-8 text-white">
@@ -476,10 +499,8 @@ const Home = () => {
                     { value: '15+', label: 'Countries Reached' }
                   ].map((stat, index) => (
                     <div key={index} className="text-center group">
-                      <div className="text-3xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 text-transparent bg-clip-text">
-                        <ClientOnly>
-                          <NumberCounter end={stat.value} />
-                        </ClientOnly>
+                      <div className="text-3xl sm:text-4xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 text-transparent bg-clip-text">
+                        <span className="inline-block">{stat.value}</span>
                       </div>
                       <div className="text-sm md:text-base mt-2 text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{stat.label}</div>
                     </div>
@@ -493,10 +514,10 @@ const Home = () => {
             <div className="max-w-3xl mx-auto">
               <div className="inline-block mb-6">
                 <div className="relative">
-                  <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text">
+                  <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 text-transparent bg-clip-text">
                     Our Mission
                   </h3>
-                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-emerald-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                 </div>
               </div>
               <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10">
@@ -936,17 +957,6 @@ const Home = () => {
                     }`}>
                       {pkg.name}
                     </h3>
-                    <div className="flex items-center justify-center mb-2">
-                      <div className={`text-4xl md:text-5xl font-bold ${
-                        pkg.popular 
-                          ? 'text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400'
-                          : index === 0
-                          ? 'text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400'
-                          : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400'
-                      }`}>
-                        {pkg.price}
-                      </div>
-                    </div>
                     <div className={`text-sm ${
                       pkg.popular 
                         ? 'text-fuchsia-300'
@@ -1075,7 +1085,7 @@ const Home = () => {
                             Enquire Now
                           </span>
                           <svg className="w-5 h-5 ml-2 text-white transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                           </svg>
                         </div>
                       </div>
@@ -1526,9 +1536,8 @@ const Home = () => {
         </div>
       </section>
     
-    
-  {/* Testimonials Section */}
-  <section className="relative py-24 overflow-hidden bg-gradient-to-br from-green-100 via-blue-100 to-purple-100">
+    {/* Testimonials Section */}
+    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
         {/* Animated Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.04]" />
@@ -1544,14 +1553,12 @@ const Home = () => {
           {/* Section Header */}
           <div className="text-center mb-20">
           <div className="inline-block">
-              <div className="flex items-center justify-center space-x-2 bg-white/40 backdrop-blur-xl rounded-full px-6 py-2 border border-white/30 shadow-lg shadow-black/5">
+              <div className="flex items-center justify-center space-x-2 bg-white/30 backdrop-blur-xl rounded-full px-4 py-1 border border-white/30 shadow-lg shadow-black/10">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-indigo-500"></span>
                 </span>
-                <span className="text-sm font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 text-transparent bg-clip-text">
-                  Our Client Testimonials
-                </span>
+                <span className="text-sm font-semibold text-indigo-900 drop-shadow-sm">Our Client Testimonials</span>
               </div>
             </div>
             <div className="mt-8 relative">
@@ -1561,9 +1568,7 @@ const Home = () => {
                   What Our Clients Say
                 </span>
               </h2>
-              <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                Discover why businesses trust us for their digital transformation journey
-              </p>
+             
             </div>
           </div>
 
@@ -1575,7 +1580,7 @@ const Home = () => {
                 role: 'CEO, TechStart Inc.',
                 content: 'Working with this team has been transformative for our business. Their attention to detail and innovative solutions exceeded our expectations.',
                 image: '/testimonials/avatar1.svg',
-                gradient: 'from-green-100 to-emerald-100',
+                gradient: 'from-emerald-400 to-teal-400',
                 rating: 5
               },
               {
@@ -1583,7 +1588,7 @@ const Home = () => {
                 role: 'CTO, Innovation Labs',
                 content: 'The level of expertise and professionalism is outstanding. They delivered a complex project on time and with exceptional quality.',
                 image: '/testimonials/avatar2.svg',
-                gradient: 'from-blue-100 to-cyan-100',
+                gradient: 'from-blue-400 to-cyan-400',
                 rating: 5
               },
               {
@@ -1591,41 +1596,51 @@ const Home = () => {
                 role: 'Marketing Director, Growth Co.',
                 content: 'Their creative approach and technical excellence have helped us achieve remarkable results. A truly reliable technology partner.',
                 image: '/testimonials/avatar3.svg',
-                gradient: 'from-purple-100 to-violet-100',
+                gradient: 'from-purple-400 to-pink-400',
                 rating: 5
               }
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="group relative p-8 rounded-2xl transition-all duration-500 hover:transform hover:scale-[1.02]"
+                className="group relative p-1 rounded-2xl transition-all duration-500 hover:transform hover:scale-[1.02] hover:rotate-1"
               >
-                {/* Card Background with Gradient Border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-200 via-sky-200 to-violet-200 rounded-2xl opacity-60 group-hover:opacity-100 blur transition-opacity duration-500" />
-                <div className="absolute inset-[1px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-lg shadow-black/5 border border-white/20"></div>
-                
-                <div className="relative z-10">
-                  {/* Quote Icon */}
-                  <div className="absolute -top-4 -left-2 text-6xl leading-none text-emerald-300 font-serif">&#8220;</div>
+                {/* Enhanced Card Background with Animated Gradient Border */}
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 rounded-2xl opacity-50 group-hover:opacity-100 blur transition-all duration-500 animate-gradient-x" />
+                <div className="relative h-full bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-xl backdrop-blur-sm">
+                  {/* Enhanced Quote Icon with Animation */}
+                  <div className="absolute -top-4 -left-4 w-10 h-10">
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full blur-sm animate-pulse" />
+                    <div className="relative w-10 h-10 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                      <svg className="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm11 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/>
+                      </svg>
+                    </div>
+                  </div>
                   
-                  {/* Rating */}
-                  <div className="flex justify-end mb-4">
+                  {/* Enhanced Rating with Animation */}
+                  <div className="flex gap-1 mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
+                      <svg 
+                        key={i} 
+                        className="w-5 h-5 text-yellow-400 transform transition-transform duration-300 hover:scale-125" 
+                        fill="currentColor" 
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
                   </div>
 
-                  {/* Testimonial Content */}
-                  <p className="text-gray-800 leading-relaxed mb-6 italic">
-                    {testimonial.content}
+                  {/* Enhanced Testimonial Content with Typography */}
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8 min-h-[100px] text-lg italic">
+                  &apos;{testimonial.content}&apos;
                   </p>
 
-                  {/* Author Info */}
+                  {/* Enhanced Author Info with Hover Effects */}
                   <div className="flex items-center gap-4">
-                    <div className="relative w-14 h-14">
-                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-sky-500 to-violet-500 rounded-full animate-spin-slow opacity-80 blur-sm" />
-                      <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-md">
+                    <div className="relative">
+                      <div className={`absolute inset-0 bg-gradient-to-r ${testimonial.gradient} rounded-full blur group-hover:blur-md transition-all duration-300 animate-pulse`} />
+                      <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white dark:border-gray-800 transform group-hover:scale-110 transition-transform duration-300">
                         <Image
                           src={testimonial.image}
                           alt={testimonial.name}
@@ -1635,64 +1650,83 @@ const Home = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
-                      <p className="text-gray-700">{testimonial.role}</p>
+                      <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-300">
+                        {testimonial.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-emerald-500 transition-colors duration-300">
+                        {testimonial.role}
+                      </p>
                     </div>
                   </div>
                 </div>
-
-                {/* Hover Effects */}
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-sky-500/5 to-violet-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             ))}
           </div>
 
-          {/* Trust Indicators */}
+          {/* Enhanced Trust Indicators */}
           <div className="mt-20">
-            <div className="flex flex-wrap justify-center gap-8 items-center">
+            <div className="flex flex-wrap justify-center gap-6 items-center">
               {[
                 {
                   icon: (
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
-                    </svg>
+                    <svg
+                    className="w-6 h-6 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
                   ),
                   text: '100% Satisfaction',
-                  color: 'text-emerald-700'
+                  color: 'from-emerald-500 to-green-500'
                 },
                 {
                   icon: (
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+                    <svg
+                    className="w-6 h-6 text-blue-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
                   ),
                   text: '5-Star Rated',
-                  color: 'text-blue-700'
+                  color: 'from-blue-500 to-cyan-500'
                 },
                 {
                   icon: (
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2v-1h2a2 2 0 00-2-2H9v-1a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h2v4l.586-.586z" />
-                  </svg>
+                    <svg
+                    className="w-6 h-6 text-purple-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                      <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
                   ),
                   text: 'Verified Reviews',
-                  color: 'text-purple-700'
+                  color: 'from-purple-500 to-pink-500'
                 }
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="group flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-sm hover:shadow-md transition-all duration-300"
+                  className="group relative p-1 rounded-full transition-all duration-300 hover:scale-105"
                 >
-                  <div className={`${item.color} group-hover:scale-110 transition-transform duration-300`}>
-                    {item.icon}
+                  <div className={`absolute inset-0 bg-gradient-to-r ${item.color} rounded-full opacity-75 group-hover:opacity-100 blur transition-all duration-300`} />
+                  <div className="relative flex items-center gap-3 px-6 py-3 bg-white dark:bg-gray-900 rounded-full backdrop-blur-sm">
+                    <div className={`bg-gradient-to-r ${item.color} bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300`}>
+                      {item.icon}
+                    </div>
+                    <span className="font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
+                      {item.text}
+                    </span>
                   </div>
-                  <span className="text-gray-700 font-medium">{item.text}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </section>
+    
     
     </main>
    
