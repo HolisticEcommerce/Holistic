@@ -1,5 +1,5 @@
+'use client';
 import React, { Suspense } from 'react';
-import { Metadata } from 'next';
 import Link from 'next/link'; 
 import Image from 'next/image';
 import { FaReact, FaNodeJs, FaWordpress, FaHtml5, FaBootstrap, FaPhp, FaBolt, FaShieldAlt, FaHeadset, FaCogs, FaCoins, FaUsers } from 'react-icons/fa';
@@ -8,18 +8,11 @@ import { TbBrandJavascript } from 'react-icons/tb';
 import ClientOnly from '@/components/ClientOnly';
 import StarryBackground from '@/components/StarryBackground';
 import NumberCounter from '@/components/NumberCounter';
+import dynamic from 'next/dynamic';
 
-// Define metadata for SEO
-export const metadata: Metadata = {
-  title: 'Holistic - Modern Web Solutions',
-  description: 'Holistic provides cutting-edge web development solutions using React, Next.js, Node.js and more. Transform your digital presence with our expertise.',
-  keywords: 'web development, React, Next.js, Node.js, TypeScript, full-stack development',
-  openGraph: {
-    title: 'Holistic - Modern Web Solutions',
-    description: 'Transform your digital presence with cutting-edge web development solutions',
-    images: ['/og-image.jpg'],
-  },
-};
+const Globe3D = dynamic(() => import('@/components/Globe3D'), { ssr: false });
+
+
 
 const stats = [
   { label: 'Active Users', value: 100, suffix: '+' },
@@ -1114,6 +1107,7 @@ const Home = () => {
                 Why Choose Us
               </span>
               </div>
+              
             </div>
             <div className="mt-8 relative">
               <div className="absolute left-1/2 -translate-x-1/2 top-0 w-40 h-40 bg-gradient-to-r from-green-200 via-blue-200 to-purple-200 rounded-full blur-3xl opacity-30"></div>
@@ -1566,6 +1560,94 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+ {/* Global Presence Section */}
+ <section className="relative py-12 md:py-24 px-4 md:px-6 overflow-hidden bg-gradient-to-b from-gray-900 to-[#0F172A]">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/0 via-cyan-900/10 to-gray-900/0" />
+          <div className="absolute top-1/3 right-0 w-[800px] h-[800px] bg-gradient-to-br from-purple-500/20 via-indigo-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse-slow" />
+          <div className="absolute -bottom-1/3 -left-64 w-[800px] h-[800px] bg-gradient-to-br from-blue-500/20 via-cyan-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse-slow delay-150" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-300 via-teal-300 to-emerald-300 bg-clip-text text-transparent mb-6">
+              <span className="relative">
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-green-500/30 to-blue-500/30 rounded-full blur-2xl"></span>
+                <span className="relative text-slate-50">Our Global Client&apos;s Presence</span>
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-green-300 via-teal-300 to-emerald-300 bg-clip-text text-transparent">
+                Trusted by businesses worldwide
+              </span>
+            </h2>
+            <p className="text-cyan-100 text-lg md:text-xl leading-relaxed mb-10">
+              Delivering holistic wellness solutions across continents
+            </p>
+          </div>
+
+          {/* Global Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
+              <div className="text-3xl font-bold text-cyan-400 mb-2">20+</div>
+              <div className="text-gray-300">Countries</div>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
+              <div className="text-3xl font-bold text-teal-400 mb-2">500+</div>
+              <div className="text-gray-300">Clients</div>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
+              <div className="text-3xl font-bold text-emerald-400 mb-2">98%</div>
+              <div className="text-gray-300">Satisfaction Rate</div>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
+              <div className="text-3xl font-bold text-blue-400 mb-2">24/7</div>
+              <div className="text-gray-300">Support</div>
+            </div>
+          </div>
+
+          {/* Interactive Globe */}
+          <div className="relative group mb-16">
+            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500" />
+            <div className="relative p-8 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl border border-cyan-900/50">
+              <Globe3D />
+            </div>
+          </div>
+
+          {/* Region Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
+              <div className="text-cyan-400 font-semibold mb-1">Middle East & GCC</div>
+              <div className="text-gray-400 text-sm">150+ Clients</div>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
+              <div className="text-teal-400 font-semibold mb-1">North America</div>
+              <div className="text-gray-400 text-sm">200+ Clients</div>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
+              <div className="text-emerald-400 font-semibold mb-1">South America</div>
+              <div className="text-gray-400 text-sm">100+ Clients</div>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
+              <div className="text-blue-400 font-semibold mb-1">Asia Pacific</div>
+              <div className="text-gray-400 text-sm">50+ Clients</div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-16">
+            <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-white font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/25">
+              Explore Global Opportunities
+              <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
     {/* Testimonials Section */}
     <section className="relative py-24 overflow-hidden bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
         {/* Animated Background */}
