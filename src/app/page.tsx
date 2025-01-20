@@ -1566,8 +1566,8 @@ const Home = () => {
         </div>
       </section>
 
- {/* Global Presence Section */}
- <section className="relative py-12 md:py-24 px-4 md:px-6 overflow-hidden bg-gradient-to-b from-gray-900 to-[#0F172A]">
+  {/* Global Presence Section */}
+  <section className="relative py-12 md:py-24 px-4 md:px-6 overflow-hidden bg-gradient-to-b from-gray-900 to-[#0F172A]">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900/0 via-cyan-900/10 to-gray-900/0" />
@@ -1578,36 +1578,44 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-300 via-teal-300 to-emerald-300 bg-clip-text text-transparent mb-6">
-              <span className="relative">
-                <span className="absolute -top-8 left-1/2 -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-green-500/30 to-blue-500/30 rounded-full blur-2xl"></span>
-                <span className="relative text-slate-50">Our Global Client&apos;s Presence</span>
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-green-300 via-teal-300 to-emerald-300 bg-clip-text text-transparent">
-                Trusted by businesses worldwide
-              </span>
-            </h2>
-            <p className="text-cyan-100 text-lg md:text-xl leading-relaxed mb-10">
-              Delivering holistic wellness solutions across continents
-            </p>
-          </div>
-
+  <h2 className="text-4xl md:text-5xl font-bold mb-6 relative">
+   
+    <div className="inline-block mb-4">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-teal-500/10 to-cyan-500/10 backdrop-blur-sm shadow-lg shadow-emerald-500/25 border border-emerald-500/20 space-x-2">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+              </span> 
+                <span className="text-emerald-400 text-sm font-semibold tracking-wide uppercase">
+                Our Global Client&apos;s Presence
+                </span>
+              </div>
+            </div>
+    <br />
+    <span className="bg-gradient-to-r from-emerald-200 via-teal-200 to-cyan-200 bg-clip-text text-transparent hover:from-emerald-300 hover:via-teal-300 hover:to-cyan-300 transition-colors duration-300">
+      Trusted by businesses worldwide
+    </span>
+  </h2>
+  <p className="text-cyan-50 text-lg md:text-xl leading-relaxed mb-10 hover:text-cyan-100 transition-colors duration-300">
+    Delivering holistic wellness solutions across continents
+  </p>
+</div>
+        
           {/* Global Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50 shadow-[0_0_15px_rgba(168,85,247,0.5)]">
               <div className="text-3xl font-bold text-cyan-400 mb-2">20+</div>
               <div className="text-gray-300">Countries</div>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50 shadow-[0_0_15px_rgba(168,85,247,0.5)]">
               <div className="text-3xl font-bold text-teal-400 mb-2">500+</div>
               <div className="text-gray-300">Clients</div>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50 shadow-[0_0_15px_rgba(168,85,247,0.5)]">
               <div className="text-3xl font-bold text-emerald-400 mb-2">98%</div>
               <div className="text-gray-300">Satisfaction Rate</div>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50 shadow-[0_0_15px_rgba(168,85,247,0.5)]">
               <div className="text-3xl font-bold text-blue-400 mb-2">24/7</div>
               <div className="text-gray-300">Support</div>
             </div>
@@ -1615,39 +1623,108 @@ const Home = () => {
 
           {/* Interactive Globe */}
           <div className="relative group mb-16">
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500" />
-            <div className="relative p-8 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl border border-cyan-900/50">
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-cyan-600 to-emerald-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500" />
+            <div className="relative p-8 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-xl border border-purple-500/20 shadow-[0_0_15px_rgba(168,85,247,0.5)] backdrop-blur-sm">
+              <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px] rounded-xl opacity-20" />
               <Globe3D />
             </div>
           </div>
 
           {/* Region Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
-              <div className="text-cyan-400 font-semibold mb-1">Middle East & GCC</div>
-              <div className="text-gray-400 text-sm">150+ Clients</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
-              <div className="text-teal-400 font-semibold mb-1">North America</div>
-              <div className="text-gray-400 text-sm">200+ Clients</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
-              <div className="text-emerald-400 font-semibold mb-1">South America</div>
-              <div className="text-gray-400 text-sm">100+ Clients</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800/50">
-              <div className="text-blue-400 font-semibold mb-1">Asia Pacific</div>
-              <div className="text-gray-400 text-sm">50+ Clients</div>
+          <div className="relative group mb-16">
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-cyan-600 to-emerald-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500" />
+            <div className="relative p-8 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-xl border border-purple-500/20 shadow-[0_0_15px_rgba(168,85,247,0.5)] backdrop-blur-sm">
+              <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px] rounded-xl opacity-20" />
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                {[
+                  {
+                    region: 'Middle East & GCC',
+                    clients: '150+',
+                    color: 'purple',
+                    icon: '🌍',
+                    gradient: 'from-purple-600 via-pink-600 to-purple-600',
+                    description: 'Leading wellness solutions'
+                  },
+                  {
+                    region: 'North America',
+                    clients: '200+',
+                    color: 'cyan',
+                    icon: '🌎',
+                    gradient: 'from-cyan-600 via-blue-600 to-cyan-600',
+                    description: 'Innovation hub'
+                  },
+                  {
+                    region: 'South America',
+                    clients: '100+',
+                    color: 'emerald',
+                    icon: '🌎',
+                    gradient: 'from-emerald-600 via-green-600 to-emerald-600',
+                    description: 'Rapid growth market'
+                  },
+                  {
+                    region: 'Asia Pacific',
+                    clients: '50+',
+                    color: 'fuchsia',
+                    icon: '🌏',
+                    gradient: 'from-fuchsia-600 via-pink-600 to-fuchsia-600',
+                    description: 'Emerging opportunities'
+                  }
+                ].map((stat, index) => (
+                  <div key={index} 
+                    className={`group/stat relative overflow-hidden transition-all duration-500 hover:scale-105`}
+                  >
+                    {/* Card Glow Effect */}
+                    <div className={`absolute -inset-1 bg-gradient-to-r ${stat.gradient} rounded-2xl blur opacity-25 group-hover/stat:opacity-50 transition duration-500`} />
+                    
+                    {/* Card Content */}
+                    <div className="relative p-6 rounded-2xl bg-gradient-to-br from-gray-900/90 via-gray-800/90 to-gray-900/90 border border-purple-500/20 shadow-[0_0_15px_rgba(168,85,247,0.3)] backdrop-blur-sm">
+                      <div className="flex flex-col items-center">
+                        {/* Icon Container */}
+                        <div className="relative w-16 h-16 flex items-center justify-center mb-4">
+                          <div className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} rounded-full blur opacity-25 group-hover/stat:opacity-75 transition-all duration-500`} />
+                          <div className="relative w-full h-full flex items-center justify-center bg-gray-900/50 rounded-full border border-purple-500/20 backdrop-blur-sm transform group-hover/stat:scale-110 group-hover/stat:rotate-6 transition-all duration-500">
+                            <span className="text-3xl">{stat.icon}</span>
+                          </div>
+                        </div>
+
+                        {/* Region Name */}
+                        <h4 className={`text-${stat.color}-400 font-semibold text-lg tracking-wide mb-2 group-hover/stat:text-${stat.color}-300 transition-colors duration-300`}>
+                          {stat.region}
+                        </h4>
+
+                        {/* Client Count */}
+                        <div className="flex items-center justify-center space-x-1 mb-2">
+                          <span className={`text-${stat.color}-500 text-3xl font-bold group-hover/stat:text-${stat.color}-400 transition-colors duration-300`}>
+                            {stat.clients}
+                          </span>
+                          <span className="text-gray-400 text-sm">Clients</span>
+                        </div>
+
+                        {/* Description */}
+                        <p className="text-gray-400 text-sm text-center mt-2 opacity-75 group-hover/stat:opacity-100 transition-opacity duration-300">
+                          {stat.description}
+                        </p>
+
+                        {/* Animated Border */}
+                        <div className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${stat.gradient} w-0 group-hover/stat:w-full transition-all duration-700 opacity-50`} />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* CTA */}
           <div className="text-center mt-16">
-            <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-400 hover:to-teal-400 text-white font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/25">
-              Explore Global Opportunities
-              <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+            <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 via-cyan-600 to-emerald-600 text-white font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_15px_rgba(168,85,247,0.5)] hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-cyan-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+              <span className="relative flex items-center">
+                Explore Global Opportunities
+                <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
             </button>
           </div>
         </div>
