@@ -107,7 +107,7 @@ const Home = () => {
             <div className="relative max-w-[90vw] sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto group">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600/30 via-cyan-600/30 to-emerald-600/30 rounded-lg blur-xl opacity-75 group-hover:opacity-100 transition duration-1000"></div>
               <div className="relative">
-                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-white">
+                <h1 className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-8xl font-bold tracking-tight text-white">
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400 animate-gradient-x pb-2">
                     Transforming Ideas
                   </span>
@@ -414,7 +414,7 @@ const Home = () => {
               </span>
               <span className="text-emerald-400 text-sm font-semibold tracking-wide uppercase">About Our Agency</span>
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 text-transparent bg-clip-text">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 text-transparent bg-clip-text">
               Crafting Digital Excellence Since 2015
             </h2>
             <p className="text-gray-400 text-xl max-w-2xl mx-auto">
@@ -709,12 +709,17 @@ const Home = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-teal-500/10 to-cyan-500/10 backdrop-blur-sm border border-teal-500/20">
-                <span className="text-sm font-semibold bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text">
-                  Pricing Plans
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-teal-500/10 to-cyan-500/10 backdrop-blur-sm shadow-lg shadow-emerald-500/25 border border-emerald-500/20 space-x-2">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+              </span> 
+                <span className="text-emerald-400 text-sm font-semibold tracking-wide uppercase">
+                   Pricing Plans
                 </span>
               </div>
             </div>
+           
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text mb-6">
               <span className="relative">
                 <span className="absolute -top-8 left-1/2 -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-teal-500/30 to-cyan-500/30 rounded-full blur-2xl"></span>
@@ -1375,7 +1380,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <h2 className="mt-8 text-6xl font-bold">
+            <h2 className="mt-8 text-5xl font-bold">
               <span className="inline-block bg-gradient-to-r from-purple-500 via-blue-500 to-green-500 text-transparent bg-clip-text">Book Your</span>
               <br />
               <span className="inline-block mt-2 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 text-transparent bg-clip-text">Innovation Journey</span>
