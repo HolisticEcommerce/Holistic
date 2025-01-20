@@ -1415,7 +1415,7 @@ const Home = () => {
                         <input
                           type="text"
                           placeholder="Your Name"
-                          className="relative w-full px-6 py-4 bg-white/90 rounded-xl text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-purple-400/50 transition-all duration-300"
+                          className="relative w-full px-6 py-4 bg-white/90 rounded-xl text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-purple-400/50 transition-all duration-300 required"
                         />
                       </div>
 
@@ -1426,15 +1426,9 @@ const Home = () => {
                           placeholder="Phone Number"
                           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                           title="Phone number format: 123-456-7890"
-                          className="relative w-full px-6 py-4 bg-white/90 rounded-xl text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-purple-400/50 transition-all duration-300"
+                          className="relative w-full px-6 py-4 bg-white/90 rounded-xl text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-purple-400/50 transition-all duration-300 required"
                         />
-                        <div className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                          </svg>
-                        </div>
-                       
-                      </div>
+                       </div>
                       <div className="relative group">
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-400 to-green-400 rounded-xl blur opacity-30 group-hover:opacity-40 transition duration-300"></div>
                         <input
@@ -1498,7 +1492,7 @@ const Home = () => {
                               </div>
                             </div>
                             <div>
-                              <p className="text-2xl font-bold text-slate-900">+12 608 (3456) 789</p>
+                              <p className="text-2xl font-bold text-slate-900">+91-9319695241</p>
                               <p className="text-slate-700">24/7 Support Available</p>
                             </div>
                           </div>
