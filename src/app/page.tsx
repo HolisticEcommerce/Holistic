@@ -696,7 +696,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-        {/* Web Design Packages Section */}
+       {/* Web Design Packages Section */}
    <section className="relative py-20 md:py-32 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628] via-[#0F2242] to-[#1A2B5C]">
@@ -708,7 +708,7 @@ const Home = () => {
         <div className="relative container mx-auto px-4">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-block mb-4">
+          <div className="inline-block mb-4">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-teal-500/10 to-cyan-500/10 backdrop-blur-sm shadow-lg shadow-emerald-500/25 border border-emerald-500/20 space-x-2">
               <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -719,7 +719,6 @@ const Home = () => {
                 </span>
               </div>
             </div>
-           
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text mb-6">
               <span className="relative">
                 <span className="absolute -top-8 left-1/2 -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-teal-500/30 to-cyan-500/30 rounded-full blur-2xl"></span>
@@ -943,6 +942,17 @@ const Home = () => {
                     }`}>
                       {pkg.name}
                     </h3>
+                    <div className="flex items-center justify-center mb-2">
+                      <div className={`text-4xl md:text-5xl font-bold ${
+                        pkg.popular 
+                          ? 'text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400'
+                          : index === 0
+                          ? 'text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400'
+                          : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400'
+                      }`}>
+                        {pkg.price}
+                      </div>
+                    </div>
                     <div className={`text-sm ${
                       pkg.popular 
                         ? 'text-fuchsia-300'
@@ -1071,7 +1081,7 @@ const Home = () => {
                             Enquire Now
                           </span>
                           <svg className="w-5 h-5 ml-2 text-white transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                           </svg>
                         </div>
                       </div>
